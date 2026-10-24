@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Unofficial de Sede website redesign concept — personal non-commercial portfolio project. Not affiliated with de Sede AG.">
+<title>de Sede Main</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&amp;family=Noto+Sans+KR:wght@300;400;500&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#111111;font-family:'Pretendard','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.serif{font-family:'Arsenica Trial','Bodoni Moda',serif;font-weight:400}
+.page{position:relative;width:100%;overflow:hidden}
+.in{max-width:1580px;margin:0 auto;padding:0 60px}
+.ph{position:relative;overflow:hidden;background:#e7e0d5}
+.ph.dk{background:#2b2a28}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 26px;background:#111111;color:#FBF8F3;font-size:12px;letter-spacing:.08em;transition:background .25s}
+.btn:hover{background:#785741}
+.tag{display:inline-block;border:1px solid #BD9257;color:#785741;border-radius:999px;font-size:10px;letter-spacing:.14em;padding:4px 16px}
+.eyebrow{display:block;font-size:11px;letter-spacing:.16em;color:#785741;margin-bottom:18px}
+.lead{font-size:15px;line-height:1.9;color:#3a3633;font-weight:300}
+.sec-h{text-align:center}
+.sec-h h2{font-size:44px;line-height:1.15;margin:22px 0 20px}
+.sec-h .lead{max-width:880px;margin:0 auto}
+
+/* hero */
+.hero{position:relative;height:1080px}
+.hero > .ph{position:absolute;inset:0}
+.hero > .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.42),rgba(17,17,17,0) 26%,rgba(17,17,17,0) 70%,rgba(17,17,17,.35))}
+.hero-bg img{opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 6s ease}
+.hero-bg img.on{opacity:1;transform:scale(1)}
+.hero-dots{position:absolute;left:max(60px,calc((100% - 1460px)/2));bottom:236px;z-index:3;display:flex;gap:28px}
+.hero-dots button{position:relative;background:none;border:0;padding:0 0 10px;min-width:44px;min-height:44px;font-family:inherit;font-size:13px;letter-spacing:.12em;color:rgba(251,248,243,.65);cursor:pointer;text-align:left}
+.hero-dots button:hover{color:#FFFFFF}
+.hero-dots button i{position:absolute;left:0;bottom:6px;height:1px;width:0;background:#FFFFFF}
+.hero-dots button.on{color:#FFFFFF}
+.hero-dots button.on i{animation:prog 6s linear forwards}
+@keyframes prog{to{width:100%}}
+.hero-card{position:absolute;right:0;bottom:-170px;width:900px;background:#111111;color:#FBF8F3;padding:64px 80px 52px;z-index:5}
+.hero-card .rule{display:block;width:48px;height:1px;background:#BD9257;margin-bottom:28px}
+.hero-card h2{font-size:48px;line-height:1.1;margin-bottom:22px}
+.hero-card p{font-size:15px;line-height:1.85;color:#d8cfc2;font-weight:300;max-width:600px}
+.hc-stack{display:grid}
+.hc-item{grid-area:1/1;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease,visibility .7s}
+.hc-item.on{opacity:1;visibility:visible;transform:none}
+.hc-item .hero-meta{margin-top:auto}
+.hc-item p{margin-bottom:44px}
+.hero-meta{display:flex;justify-content:space-between;gap:24px;padding-top:22px;border-top:1px solid rgba(251,248,243,.18);font-size:11px;letter-spacing:.14em;color:#b9ad9f}
+.hero-meta b{color:#FBF8F3;font-weight:300;margin-left:14px;letter-spacing:.06em}
+
+/* locations */
+.loc{position:relative;padding:340px 0 200px;overflow:hidden}
+.ghost{position:absolute;left:-60px;top:50%;font-size:220px;line-height:1;color:#ebe3d7;opacity:.4;z-index:0;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);pointer-events:none;white-space:nowrap;will-change:transform;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.loc-wrap{position:relative;height:960px}
+.loc-imgs{position:absolute;inset:0}
+.loc .a{position:absolute;left:0;top:0;width:51.2%;height:897px}
+.loc .b{position:absolute;left:46.3%;top:460px;width:27.3%;height:300px;z-index:2;box-shadow:0 24px 48px rgba(17,17,17,.12)}
+.loc .c{position:absolute;left:66.7%;top:675px;width:205px;height:205px;border-radius:50%;background:#785741;z-index:3;display:flex;align-items:center;justify-content:center}
+.loc .c svg{width:100%;height:100%;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loc-txt{position:absolute;left:58.5%;top:10px;width:38%}
+.loc-txt h2{font-size:44px;line-height:1.15;margin-bottom:26px}
+.loc-txt .lead{max-width:520px}
+.loc-txt .btn{margin-top:34px}
+
+/* products */
+.band{background:#FBF8F3;padding:100px 0 140px}
+.p3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:100px}
+.p3 figure{margin:0;text-align:center}
+.p3 .ph{height:420px;background:transparent}
+.p3 .ph img{object-fit:contain}
+.btn{transition:background .25s,transform .25s}
+.btn:active{transform:scale(.97)}
+.p3 .ph img{transition:transform .6s ease}
+.p3 figure:hover .ph img{transform:scale(1.04)}
+.p3 h3{font-size:30px;margin:44px 0 10px}
+.price{display:block;font-size:16px;color:#6b625b;letter-spacing:.04em;margin-bottom:22px}
+.dots{display:flex;gap:10px;justify-content:center;margin-bottom:30px}
+.dots i{width:12px;height:12px;border-radius:50%;display:block}
+
+/* promo */
+.promo{padding:240px 0 200px}
+.promo-img{height:730px}
+.promo-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:120px;margin-top:72px;align-items:start}
+.promo-row .eyebrow{color:#8a837c;letter-spacing:.06em;font-size:13px;margin-bottom:16px}
+.promo-row h2{font-size:44px;line-height:1.18;max-width:640px}
+.promo-row .sub{font-size:16px;color:#6b625b;margin-top:22px}
+.promo-row .lead + .lead{margin-top:20px}
+.promo-row .btn{margin-top:36px}
+
+/* marquee */
+.mq{position:relative;padding:120px 0 160px;overflow:hidden}
+.mq-l{display:flex;align-items:flex-start;white-space:nowrap;font-size:300px;line-height:.95;letter-spacing:-.02em}
+.mq-l{will-change:transform;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.mq{cursor:default}
+.mq-img.follow{right:auto;opacity:0;transform:translate(-50%,-50%) scale(.8) rotate(-4deg);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.7,.2,1),left .35s cubic-bezier(.2,.7,.2,1),top .35s cubic-bezier(.2,.7,.2,1);pointer-events:none;box-shadow:0 30px 60px rgba(17,17,17,.18)}
+.mq-img.follow.show{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}
+.mq-l1{padding-left:max(40px,calc((100% - 1460px)/2))}
+.mq-l1 .ar{width:.36em;height:.9em;flex:none;margin-right:.04em}
+.mq-l1 sup{font-size:.5em;line-height:1;margin-left:.02em}
+.mq-l2{justify-content:center;margin-top:.02em}
+.mq-l2 .ar{width:.62em;height:.62em;flex:none;margin:.2em .06em 0}
+.mq-img{position:absolute;right:14%;top:467px;width:300px;height:300px;z-index:2}
+.mq-img img{opacity:0;transform:scale(1.08);transition:opacity .5s ease,transform .9s ease}
+.mq-img img.on{opacity:1;transform:none}
+.mq-no{position:absolute;left:12px;bottom:10px;z-index:2;font-size:11px;letter-spacing:.14em;color:#FFFFFF;mix-blend-mode:difference}
+
+/* rooms */
+.rooms{padding:160px 0 0}
+.rooms .sec-h{margin-bottom:80px}
+.rooms-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.room{position:relative;height:960px;display:flex;align-items:center;justify-content:center;text-align:center;color:#FBF8F3}
+.room .ph{position:absolute;inset:0}
+.room .ph::after{content:"";position:absolute;inset:0;background:rgba(17,17,17,.38);transition:background .5s}
+.room .ph img{filter:grayscale(1);transition:filter .6s ease,transform .9s ease}
+.room:hover .ph img{filter:none;transform:scale(1.04)}
+.room:hover .ph::after{background:rgba(17,17,17,.22)}
+.room h3{position:relative;z-index:2;font-size:64px;line-height:1.05;color:rgba(251,248,243,.88)}
+.room .more{position:absolute;z-index:2;bottom:56px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.18em;padding-bottom:6px;border-bottom:1px solid currentColor}
+
+/* our product */
+.our{padding:220px 0}
+.our .sec-h{margin-bottom:80px}
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:380px 380px;gap:30px}
+.bento a{position:relative;display:flex;flex-direction:column;padding:44px 48px;background:#FBF8F3;color:#111111;overflow:hidden}
+.bento .pimg{position:absolute;display:block;height:auto;object-fit:contain;pointer-events:none;transition:transform .8s ease}
+.bento a:hover .pimg{transform:scale(1.04)}
+.bento .lbl{position:relative;z-index:2}
+.bento h3{font-size:26px;line-height:1.2}
+.bento .go{display:inline-flex;align-items:center;gap:14px;margin-top:10px;font-size:12px;letter-spacing:.08em;color:#6b625b}
+.bento .go i{position:relative;display:block;width:28px;height:1px;background:currentColor;transition:width .3s ease}
+.bento .go i::after{content:"";position:absolute;right:0;top:0;width:7px;height:1px;background:currentColor;transform:rotate(30deg);transform-origin:right center}
+.bento a:hover .go i{width:44px}
+.b1{grid-column:1/6;grid-row:1/3;justify-content:flex-end}
+.b1 .pimg{left:-4%;top:calc(5% + 8px);width:108%}
+.b2{grid-column:6/13;grid-row:1/2;justify-content:flex-end;padding-bottom:64px}
+.b2 .pimg{right:0;top:24%;width:68%}
+.b2 .lbl{max-width:42%}
+.b3{grid-column:6/9;grid-row:2/3;justify-content:flex-start}
+.b3 .pimg{left:50%;bottom:28px;width:64%;margin-left:-32%}
+.b4{grid-column:9/13;grid-row:2/3;justify-content:flex-end}
+.b4 .pimg{right:2%;top:5%;width:68%}
+
+/* our sns */
+.craft{background:#FBF8F3;padding:140px 0 180px}
+.craft-g{display:grid;grid-template-columns:440px 330px minmax(0,1fr);align-items:start;padding:0 26px 0 max(60px,calc((100% - 1460px)/2))}
+.craft-txt{padding-top:4px}
+.craft .eyebrow{font-size:13px;letter-spacing:.04em;color:#8a837c;margin-bottom:22px}
+.craft h2{font-size:44px;line-height:1.12;font-weight:500;letter-spacing:-.01em;margin:0 0 34px}
+.craft .lead{font-size:15px;line-height:1.85;color:#3a3633;max-width:360px;word-break:keep-all}
+.sns-a{position:relative;margin-top:245px}
+.sns-b{margin-left:clamp(40px,10vw,190px)}
+.sns-a .ph{position:relative;z-index:1;height:385px}
+.sns-b .ph{height:445px}
+.ig{position:absolute;top:16px;right:16px;z-index:2;width:22px;height:22px;color:#FFFFFF}
+.ig svg{display:block;width:100%;height:100%}
+.show-more{position:absolute;z-index:0;left:-118px;bottom:-84px;width:170px;height:170px;border:1px solid #d6cfc4;border-radius:50%;color:#9a928a;font-size:12px;letter-spacing:.1em;display:flex;align-items:center;justify-content:center;transition:border-color .3s,color .3s}
+.show-more span{display:block;transform:rotate(-32deg) translate(-14px,10px)}
+.show-more:hover{border-color:#785741;color:#785741}
+.sns-go{display:flex;justify-content:flex-end;margin-top:24px;padding-right:12px}
+.sns-go a{width:52px;height:52px;border:1px solid #9a928a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3a3633;transition:background .3s,color .3s,border-color .3s}
+.sns-go a:hover{background:#111111;border-color:#111111;color:#FBF8F3}
+.pager{display:flex;align-items:center;gap:10px;margin-top:118px;color:#6b625b}
+.pager button{width:44px;height:44px;background:none;border:0;color:#6b625b;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.pager button:hover{color:#111111}
+.pager button svg{width:28px;height:14px}
+.pager span{font-size:24px;min-width:44px;text-align:center}
+
+@media (max-width:1440px) and (min-width:1025px){
+  .craft-g{grid-template-columns:minmax(0,30fr) minmax(0,24fr) minmax(0,44fr)}
+  .craft-txt{padding-right:32px}
+  .sns-b{margin-left:48px}
+  .show-more{left:-90px}
+}
+@media (max-width:1024px){
+  .in{padding:0 32px}
+  .sec-h h2{font-size:36px}
+  .hero{height:760px}
+  .hero-dots{left:32px;bottom:250px}
+  .hero-card{width:auto;left:32px;right:0;bottom:-120px;padding:44px 48px 40px}
+  .hero-meta{flex-wrap:wrap;gap:10px 28px;justify-content:flex-start}
+  .hero-card h2{font-size:38px}
+  .loc{padding:220px 0 120px}
+  .ghost{display:none}
+  .loc-wrap{height:auto;display:flex;flex-direction:column;gap:64px}
+  .loc-imgs{position:relative;inset:auto;height:620px}
+  .loc .a{width:78%;height:100%}
+  .loc .b{left:auto;right:0;top:auto;bottom:60px;width:34%;height:44%}
+  .loc .c{left:auto;right:30%;top:auto;bottom:-40px;width:150px;height:150px}
+  .loc .b{left:auto}
+  .loc-txt{position:relative;left:auto;top:auto;width:auto;padding-left:40px}
+  .loc-txt h2{font-size:36px}
+  .band{padding:160px 0 180px}
+  .p3{gap:28px}
+  .p3 .ph{height:280px}
+  .p3 h3{font-size:24px;margin-top:28px}
+  .promo{padding:160px 0 120px}
+  .promo-img{height:480px}
+  .promo-row{gap:56px;margin-top:56px}
+  .promo-row h2{font-size:34px}
+  .mq{padding:80px 0 140px}
+  .mq-l{font-size:160px}
+  .mq-img{width:190px;height:190px;top:220px;right:10%}
+  .rooms{padding-top:140px}
+  .rooms .sec-h{margin-bottom:56px}
+  .room{height:620px}
+  .room h3{font-size:32px}
+  .our{padding:140px 0}
+  .our .sec-h{margin-bottom:56px}
+  .bento{grid-template-rows:300px 300px;gap:16px}
+  .bento a{padding:28px 30px}
+  .b2{padding-bottom:36px}
+  .bento h3{font-size:22px}
+  .craft{padding:120px 0 140px}
+  .craft-g{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);column-gap:32px;padding:0 0 0 32px}
+  .craft-txt{grid-column:1/-1;padding:0 32px 40px 0}
+  .pager{margin-top:40px}
+  .sns-a{margin-top:120px}
+  .sns-a .ph{height:340px}
+  .sns-b{margin-left:0}
+  .sns-b .ph{height:400px}
+  .show-more{width:130px;height:130px;left:-40px;bottom:-60px;font-size:11px}
+}
+@media (max-width:720px){
+  .in{padding:0 20px}
+  .sec-h h2{font-size:30px}
+  .lead{font-size:14px}
+  .hero{height:auto}
+  .hero > .ph{position:relative;height:440px}
+  .hero-dots{left:20px;top:340px;bottom:auto;gap:12px}
+  .hero-card{position:relative;left:auto;right:auto;bottom:auto;width:auto;margin:-40px 0 0 20px;padding:32px 24px 28px}
+  .hero-card h2{font-size:30px}
+  .hero-card p{font-size:14px}
+  .hero-meta{flex-direction:column;gap:8px;margin-top:24px}
+  .hero-meta b{margin-left:10px}
+  .loc{padding:96px 0 72px}
+  .ghost{display:none}
+  .loc-wrap{gap:48px}
+  .loc-imgs{height:440px}
+  .loc .a{width:82%}
+  .loc .b{width:40%;height:36%;bottom:40px}
+  .loc .c{width:104px;height:104px;right:34%;bottom:-28px}
+  .loc-txt{padding-left:0}
+  .loc-txt h2{font-size:30px}
+  .band{padding:96px 0}
+  .p3{grid-template-columns:1fr;gap:72px}
+  .p3 .ph{height:300px}
+  .promo{padding:96px 0 72px}
+  .promo-img{height:300px}
+  .promo-row{grid-template-columns:1fr;gap:28px;margin-top:36px}
+  .promo-row h2{font-size:28px}
+  .mq{padding:56px 0 96px}
+  .mq-l{font-size:84px}
+  .mq-img{width:110px;height:110px;top:120px;right:8%}
+  .loc .c{left:auto}
+  .rooms{padding-top:96px}
+  .rooms .sec-h{margin-bottom:40px}
+  .rooms-g{grid-template-columns:1fr}
+  .room{height:420px}
+  .room h3{font-size:34px}
+  .room .more{bottom:32px}
+  .our{padding:96px 0}
+  .our .sec-h{margin-bottom:40px}
+  .bento{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:auto;gap:12px}
+  .b1{grid-column:1/3;grid-row:auto;height:420px}
+  .b1 .pimg{height:64%;width:auto;max-width:94%;left:0;right:0;margin:0 auto;top:5%}
+  .b2{grid-column:1/3;grid-row:auto;height:280px;padding-bottom:20px}
+  .b2 .pimg{height:50%;width:auto;max-width:86%;right:0;top:20px}
+  .b2 .lbl{max-width:none}
+  .b3,.b4{grid-column:auto;grid-row:auto;height:260px}
+  .b3 .pimg{height:48%;width:auto;max-width:84%;left:0;right:0;margin:0 auto;bottom:16px}
+  .b4 .pimg{height:46%;width:auto;max-width:84%;right:6%;top:8%}
+  .bento a{padding:20px}
+  .bento h3{font-size:18px}
+  .bento .go{font-size:11px;gap:10px}
+  .craft{padding:88px 0 80px}
+  .craft-g{grid-template-columns:1fr;padding:0 20px}
+  .craft-txt{padding:0 0 32px}
+  .craft h2{font-size:32px}
+  .craft .lead br{display:none}
+  .pager{margin-top:28px}
+  .sns-a{display:none}
+  .sns-b .ph{height:300px}
+}
+
+/* safety: images always fill their frame */
+.ph > img{inset:0 !important;width:100% !important;height:100% !important;max-width:none !important}
+/* scroll reveal */
+@media (prefers-reduced-motion:no-preference){
+  .rv-on .rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .rv.rv-in{opacity:1;transform:none}
+  .rv-on .p3 figure:nth-child(2),.rv-on .rooms-g .room:nth-child(2),.rv-on .bento a:nth-child(2),.rv-on .promo-row > div:nth-child(2),.rv-on .sns-a{transition-delay:.12s}
+  .rv-on .p3 figure:nth-child(3),.rv-on .rooms-g .room:nth-child(3),.rv-on .bento a:nth-child(3),.rv-on .sns-b{transition-delay:.24s}
+  .rv-on .bento a:nth-child(4){transition-delay:.36s}
+  .rv-on .promo-img.rv{transform:none}
+  .rv-on .promo-img > img{transform:scale(1.08);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .promo-img.rv-in > img{transform:none}
+}
+/* SNS slide change */
+.sns-f img{opacity:0}
+.sns-f img.on{opacity:1;z-index:1;animation:snsNext 1s cubic-bezier(.7,0,.2,1) both}
+.sns-f img.was{opacity:1;z-index:0}
+.sns-f.prev img.on{animation-name:snsPrev}
+.sns-b .sns-f img.on{animation-delay:.1s}
+.sns-f .ig{z-index:3}
+@keyframes snsNext{from{clip-path:inset(0 0 0 100%);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+@keyframes snsPrev{from{clip-path:inset(0 100% 0 0);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+.pager span{transition:opacity .3s}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div class="page" ref="{{pageRef}}">
+  <dc-import name="Header" color="#FFFFFF" hint-size="100%,80px"></dc-import>
+
+  <section class="hero" aria-label="메인 비주얼" aria-roledescription="carousel">
+    <div class="ph dk hero-bg">
+      <sc-for list="{{slides}}" as="sl" hint-placeholder-count="4">
+        <img class="{{sl.cls}}" src="{{sl.img}}" alt="{{sl.alt}}">
+      </sc-for>
+    </div>
+    <div class="hero-dots" role="group" aria-label="슬라이드 선택">
+      <sc-for list="{{slides}}" as="sl" hint-placeholder-count="4">
+        <button type="button" class="{{sl.cls}}" aria-label="{{sl.no}}번 슬라이드" aria-pressed="{{sl.pressed}}" onClick="{{sl.pick}}">{{sl.no}}<i aria-hidden="true"></i></button>
+      </sc-for>
+    </div>
+    <div class="hero-card" aria-live="polite">
+      <span class="rule" aria-hidden="true"></span>
+      <div class="hc-stack">
+        <sc-for list="{{slides}}" as="sl" hint-placeholder-count="4">
+          <div class="{{sl.itemCls}}" aria-hidden="{{sl.hidden}}">
+            <h2 class="serif">{{sl.title}}</h2>
+            <p>{{sl.desc}}</p>
+            <div class="hero-meta"><span>YEAR<b>{{sl.year}}</b></span><span>DESIGNER<b>{{sl.designer}}</b></span><span>MODEL<b>{{sl.model}}</b></span></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="loc" ref="{{locRef}}">
+    <div class="ghost serif" aria-hidden="true" style="{{ghostStyle}}">History — Walser</div>
+    <div class="in">
+      <div class="loc-wrap">
+        <div class="loc-imgs">
+          <div class="ph dk a"><img src="/_blob/c2a64d6fa269a68e128961580545f39b.webp" alt="드 세데 가죽 소파가 놓인 거실" style="object-position: 50% 0%; aspect-ratio: 1146 / 1373" width="1146" height="1373"></div>
+          <div class="ph b"><img src="/_blob/b331bb74d31210e1faf3c4e90744b83e.webp" alt="200828_desede_0136_hr_v2-1" width="2848" height="2148" style="object-position: 50% 100%"></div>
+        </div>
+        <div class="loc-txt">
+          <span class="eyebrow" style="font-size: 12px">SINCE 1965</span>
+          <h2 class="serif">Locations:<br>Klingnau, Schweiz</h2>
+          <p class="lead">드 세데는 1965년 스위스 클링나우에서 시작되었습니다. 지금도 같은 자리에서 장인들이 가죽을 고르고, 재단하고, 손으로 꿰매 소파를 완성합니다.</p>
+          <a class="btn" href="About.dc.html" style="font-weight: 300">Read more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="추천 제품">
+    <div class="in">
+      <div class="p3">
+        <figure><div class="ph"><img src="/_blob/36e8b0b345bc6eb73b821788016313d4.webp" alt="DS-161 암체어" width="1254" height="1254"></div><h3 class="serif">DS-161</h3><span class="price" style="font-size: 18px">₩ 7,700,000</span><div class="dots"><i style="background:#1f5e63"></i><i style="background:#111111"></i><i style="background:#785741"></i><i style="background:#BD9257"></i></div><a class="btn" href="Products.dc.html" style="font-weight: 300">Buy now</a></figure>
+        <figure><div class="ph"><img src="/_blob/7e36762c2150d22afb10dd060fbea8ed.webp" alt="DS-707 패브릭 암체어" width="1254" height="1254"></div><h3 class="serif">DS-707</h3><span class="price" style="font-size: 18px">₩ 9,700,000</span><div class="dots"><i style="background:#b8691f"></i><i style="background:#e7d9c4"></i><i style="background:#111111"></i><i style="background:#FBF8F3;border:1px solid #BD9257"></i></div><a class="btn" href="Products.dc.html">Buy now</a></figure>
+        <figure><div class="ph"><img src="/_blob/865f7951e187d363660280f282feccfe.webp" alt="DS-164 블랙 가죽 암체어" width="1254" height="1254"></div><h3 class="serif">DS-164</h3><span class="price" style="font-size: 18px">₩ 7,820,000</span><div class="dots"><i style="background:#FBF8F3;border:1px solid #BD9257"></i><i style="background:#111111"></i><i style="background:#785741"></i></div><a class="btn" href="Products.dc.html">Buy now</a></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo">
+    <div class="in">
+      <div class="ph promo-img"><img src="/_blob/57247656a50fdea7f94f636de015d088.webp" alt="콘크리트 기둥 위의 레드 패브릭 소파"></div>
+      <div class="promo-row">
+        <div>
+          <span class="eyebrow">IN THE 1938 – 2022</span>
+          <h2 class="serif">Classic De sede's special Sofa promotion</h2>
+          <p class="sub">Receive an additional classic crown</p>
+        </div>
+        <div>
+          <p class="lead">DS-707은 수제 가죽으로 완성한 현대적인 디자인입니다. 포스트모던 시대에서 영감을 받아 디자이너 Philippe Malouin이 제작했으며, 자유롭게 결합하는 모듈 구조로 어떤 공간에도 새로운 변화를 줍니다.</p>
+          <p class="lead">지속 가능한 소재로 조각 같은 실루엣을 살려, 자연을 생각하는 브랜드의 가치를 담았습니다.</p>
+          <a class="btn" href="Products.dc.html">Shop now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mq" aria-label="Living sustainability" ref="{{mqRef}}" onMouseMove="{{mqMove}}" onMouseEnter="{{mqMove}}" onMouseLeave="{{mqLeave}}">
+    <div class="mq-l mq-l1 serif" style="{{mq1}}">
+      <svg class="ar" viewBox="0 0 40 100" fill="none" stroke="#111111" stroke-width="1.6" aria-hidden="true"><path d="M20 4v90M6 78l14 16 14-16"></path></svg>
+      <span>LIVING</span><sup>*</sup>
+    </div>
+    <div class="mq-l mq-l2 serif" style="{{mq2}}">
+      <span>SUSTAIN</span>
+      <svg class="ar" viewBox="0 0 100 100" fill="none" stroke="#111111" stroke-width="1.4" aria-hidden="true"><path d="M8 8l84 84M92 40v52H40"></path></svg>
+      <span>ABILITY</span>
+    </div>
+    <div class="{{mqImgCls}}" aria-hidden="true" style="{{mqImgStyle}}"><sc-for list="{{mqImgs}}" as="m" hint-placeholder-count="5"><img class="{{m.cls}}" src="{{m.src}}" alt=""></sc-for></div>
+  </section>
+
+  <section class="rooms">
+    <div class="in">
+      <div class="sec-h">
+        <span class="tag">DE SEDE</span>
+        <h2 class="serif">Shop by room</h2>
+        <p class="lead">드 세데는 사무실, 집, 라운지까지 공간의 성격에 맞는 컬렉션을 제안합니다.<br>머무는 공간에 어울리는 소파와 체어를 룸별로 만나보세요.</p>
+      </div>
+    </div>
+    <div class="rooms-g">
+      <a class="room" href="Showroom.dc.html"><div class="ph dk" style="opacity: 1"><img src="/_blob/0779ec8a0af3ae2f9b3ed444ebf6967f.webp" alt="오피스 라운지 체어 컬렉션" width="1932" height="2925" style="height: auto; aspect-ratio: 1932 / 2925"></div><h3 class="serif">ART OF THE<br>OFFICE</h3><span class="more">DISCOVER</span></a>
+      <a class="room" href="Showroom.dc.html"><div class="ph dk"><img src="/_blob/2d7effd9cc19e18a0840791f57745c09.webp" alt="하우스 컬렉션 패브릭 암체어" width="1932" height="2925" style="height: auto; aspect-ratio: 1932 / 2925"></div><h3 class="serif">ART OF THE<br>HOUSE</h3><span class="more">DISCOVER</span></a>
+      <a class="room" href="Showroom.dc.html"><div class="ph dk"><img src="/_blob/7e862bd93b51abd8b3e1cfc6505fb1c4.webp" alt="라운지 모듈 소파 DS-600" width="2564" height="3000" style="height: 100%; aspect-ratio: 2564 / 3000"></div><h3 class="serif">ART OF THE<br>LOUNGE</h3><span class="more">DISCOVER</span></a>
+    </div>
+  </section>
+
+  <section class="our">
+    <div class="in">
+      <div class="sec-h">
+        <span class="tag">DE SEDE</span>
+        <h2 class="serif">Our Product</h2>
+        <p class="lead">소파부터 침대, 테이블, 체어까지.<br>드 세데의 대표 제품군을 카테고리별로 확인해보세요.</p>
+      </div>
+      <div class="bento">
+        <a class="b1" href="Products.dc.html"><img class="pimg" src="/_blob/c524eaffc948b9ce07d88da9550dfc72.webp" alt="블랙 가죽 모듈 소파 DS-600"><span class="lbl"><h3 class="serif">Sofas &amp; Loungers</h3><span class="go">SHOP NOW <i aria-hidden="true"></i></span></span></a>
+        <a class="b2" href="Products.dc.html"><img class="pimg" src="/_blob/e63c3e07699d96b50f3caf79ef9130af.webp" alt="브라운 가죽 데이베드"><span class="lbl"><h3 class="serif">Beds &amp; Mattresses</h3><span class="go">SHOP NOW <i aria-hidden="true"></i></span></span></a>
+        <a class="b3" href="Products.dc.html"><img class="pimg" src="/_blob/0c5e9a2e97cbb46f9decd2a5efcf6e31.webp" alt="가죽과 스틸 사이드 테이블"><span class="lbl"><h3 class="serif">Tables</h3><span class="go">SHOP NOW <i aria-hidden="true"></i></span></span></a>
+        <a class="b4" href="Products.dc.html"><img class="pimg" src="/_blob/ef1c02d1299e1bf52a81f1c5b62f04ee.webp" alt="레드 부클레 암체어"><span class="lbl"><h3 class="serif">Chairs &amp; Armchairs</h3><span class="go">SHOP NOW <i aria-hidden="true"></i></span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="craft" aria-label="Our SNS">
+    <div class="craft-g">
+      <div class="craft-txt">
+        <span class="eyebrow">OUR SNS</span>
+        <h2 class="serif">We have a<br>heart for<br>craftsmanship.</h2>
+        <p class="lead">공간의 경계를 허물어 특별함을 주는 다양한 모습을 만나보세요. 머물고 싶은 공간이 되는 신비함을 느낄 수 있습니다.</p>
+        <div class="pager">
+          <button type="button" aria-label="이전" onClick="{{snsPrev}}"><svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M27 7H1M7 1L1 7l6 6"></path></svg></button>
+          <span class="serif">{{snsNo}}/6</span>
+          <button type="button" aria-label="다음" onClick="{{snsNext}}"><svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 7h26M21 1l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      <div class="sns-a">
+        <a class="show-more" href="#" aria-label="인스타그램 게시물 더 보기"><span>SHOW MORE</span></a>
+        <div class="{{snsFrame}}"><sc-for list="{{snsAList}}" as="m" hint-placeholder-count="6"><img class="{{m.cls}}" src="{{m.src}}" alt="{{m.alt}}"></sc-for><span class="ig" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></span></div>
+      </div>
+      <div class="sns-b">
+        <div class="{{snsFrame}}"><sc-for list="{{snsBList}}" as="m" hint-placeholder-count="6"><img class="{{m.cls}}" src="{{m.src}}" alt="{{m.alt}}"></sc-for><span class="ig" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></span></div>
+        <div class="sns-go"><a href="#" aria-label="인스타그램으로 이동"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" bg="/_blob/e780e0e919b7c9125a6a8ae71992d3b5.webp" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1920,"height":11600}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { slide: 0, sns: 0, snsWas: -1, snsDir: 'next', p: 0.5, gp: 0.5, hx: 70, hy: 50, hov: false, canHover: false }; }
+  onScroll() {
+    if (this.raf) return;
+    this.raf = requestAnimationFrame(() => {
+      this.raf = null;
+      const vh = window.innerHeight || 800;
+      const prog = (el) => { const r = el.getBoundingClientRect(); return Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height))); };
+      const next = {};
+      if (this.mqEl) { const p = prog(this.mqEl); if (Math.abs(p - this.state.p) > 0.002) next.p = p; }
+      if (this.locEl) { const gp = prog(this.locEl); if (Math.abs(gp - this.state.gp) > 0.002) next.gp = gp; }
+      if (Object.keys(next).length) this.setState(next);
+    });
+  }
+  componentDidMount() {
+    this.scrollFn = () => this.onScroll();
+    window.addEventListener('scroll', this.scrollFn, { passive: true });
+    window.addEventListener('resize', this.scrollFn);
+    document.addEventListener('scroll', this.scrollFn, { passive: true, capture: true });
+    this.onScroll();
+    const root = this.pageEl;
+    if (root && typeof IntersectionObserver !== 'undefined') {
+      const els = root.querySelectorAll('.sec-h, .loc-txt, .p3 figure, .promo-img, .promo-row > div, .rooms-g .room, .bento a, .craft-txt, .sns-a, .sns-b');
+      els.forEach((el) => el.classList.add('rv'));
+      root.classList.add('rv-on');
+      this.io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting || en.boundingClientRect.top < 0) { en.target.classList.add('rv-in'); this.io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+      els.forEach((el) => this.io.observe(el));
+    }
+    const mm = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)');
+    if (mm && mm.matches) this.setState({ canHover: true }); this.timer = setInterval(() => this.setState({ slide: (this.state.slide + 1) % 4 }), 6000); }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); clearInterval(this.timer); window.removeEventListener('scroll', this.scrollFn); window.removeEventListener('resize', this.scrollFn); document.removeEventListener('scroll', this.scrollFn, true); }
+  renderVals() {
+    const data = [
+      { img: '/_blob/59bcd66b7f89f4a10885f77654ff6fbe.webp', alt: '숲이 보이는 거실의 테라코타색 가죽 소파', title: 'Sofas & Loungers', desc: '스위스 클링나우의 장인정신으로 완성한 소파 컬렉션. 조형적인 형태와 가죽 마감이 공간을 하나의 작품으로 만듭니다.', year: '2021', designer: 'Oliver Rodrigez', model: 'DS-707' },
+      { img: '/_blob/7e862bd93b51abd8b3e1cfc6505fb1c4.webp', alt: '라운지에 놓인 블랙 가죽 모듈 소파', title: 'Modular Lounge', desc: '자유롭게 이어 붙이는 모듈 구조로, 공간의 크기와 쓰임에 맞춰 형태를 바꾸는 라운지 컬렉션입니다.', year: '2019', designer: 'Ueli Berger', model: 'DS-600' },
+      { img: '/_blob/5f4d3c3ee56971c06e06c6e772e7ed2f.webp', alt: '자연광이 드는 거실의 브라운 가죽 소파와 라운지체어', title: 'Living Classic', desc: '오래 앉을수록 몸에 맞춰지는 부드러운 가죽과 깊은 좌석. 매일의 휴식을 위한 클래식 라인입니다.', year: '2016', designer: 'Stephan Hürlemann', model: 'DS-21' },
+      { img: '/_blob/82dd23339156c20a0690b20096f4daa1.webp', alt: '흑백 액자가 걸린 벽 앞의 화이트 가죽 데이베드', title: 'Daybed Collection', desc: '격자 퀼팅의 화이트 가죽과 원목 프레임이 어우러진 데이베드. 거실과 침실 어디에나 조용히 녹아듭니다.', year: '2020', designer: 'de Sede Design Team', model: 'DS-80' }
+    ];
+    const cur = this.state.slide;
+    const sns = ['/_blob/5f4d3c3ee56971c06e06c6e772e7ed2f.webp', '/_blob/82dd23339156c20a0690b20096f4daa1.webp', '/_blob/59bcd66b7f89f4a10885f77654ff6fbe.webp', '/_blob/7e862bd93b51abd8b3e1cfc6505fb1c4.webp', '/_blob/57247656a50fdea7f94f636de015d088.webp', '/_blob/1afa1d068137b15478c443c4c2f64a4c.webp'];
+    const si = this.state.sns;
+    const go = (i) => { clearInterval(this.timer); this.setState({ slide: i }); this.timer = setInterval(() => this.setState({ slide: (this.state.slide + 1) % 4 }), 6000); };
+    const ch = this.state.canHover;
+    const iw = (typeof window !== 'undefined' && window.innerWidth) || 1440;
+    const p = this.state.p;
+    const x1 = Math.round((0.05 - 0.13 * p) * iw);
+    const x2 = Math.round((-0.09 + 0.13 * p) * iw);
+    const gy = Math.round((this.state.gp - 0.5) * 360);
+    const pool = ['/_blob/8db705f679914e5392394394ec20b6ca.webp', '/_blob/b331bb74d31210e1faf3c4e90744b83e.webp', '/_blob/5f4d3c3ee56971c06e06c6e772e7ed2f.webp', '/_blob/1afa1d068137b15478c443c4c2f64a4c.webp', '/_blob/82dd23339156c20a0690b20096f4daa1.webp'];
+    const mi = ch ? Math.min(4, Math.max(0, Math.floor(this.state.hx / 20))) : cur % 5;
+    return {
+      mq1: 'transform: translateX(' + x1 + 'px)',
+      mq2: 'transform: translateX(' + x2 + 'px)',
+      mqRef: (el) => { this.mqEl = el; },
+      locRef: (el) => { this.locEl = el; },
+      ghostStyle: 'transform: translateY(calc(-50% + ' + gy + 'px)) rotate(180deg)',
+      mqImgs: pool.map((src, i) => ({ src, cls: i === mi ? 'on' : '' })),
+      mqNo: '0' + (mi + 1) + ' / 05',
+      mqMove: (e) => {
+        if (!this.state.canHover || !this.mqEl) return;
+        const r = this.mqEl.getBoundingClientRect();
+        this.setState({ hov: true, hx: ((e.clientX - r.left) / r.width) * 100, hy: ((e.clientY - r.top) / r.height) * 100 });
+      },
+      mqLeave: () => this.setState({ hov: false }),
+      mqImgCls: ch ? ('ph mq-img follow' + (this.state.hov ? ' show' : '')) : 'ph mq-img',
+      mqImgStyle: ch ? ('left:' + this.state.hx + '%;top:' + this.state.hy + '%') : '',
+      slides: data.map((d, i) => ({ ...d, no: '0' + (i + 1), cls: i === cur ? 'on' : '', itemCls: i === cur ? 'hc-item on' : 'hc-item', hidden: i === cur ? 'false' : 'true', pressed: i === cur ? 'true' : 'false', pick: () => go(i) })),
+      pageRef: (el) => { this.pageEl = el; },
+      snsFrame: 'ph sns-f' + (this.state.snsDir === 'prev' ? ' prev' : ''),
+      snsAList: sns.map((src, i) => ({ src, alt: 'de Sede 인스타그램 게시물', cls: i === si ? 'on' : (i === this.state.snsWas ? 'was' : '') })),
+      snsBList: sns.map((src, i) => ({ src, alt: 'de Sede 인스타그램 게시물', cls: i === (si + 1) % 6 ? 'on' : (this.state.snsWas >= 0 && i === (this.state.snsWas + 1) % 6 ? 'was' : '') })),
+      snsNo: si + 1,
+      snsPrev: () => this.setState({ snsWas: si, snsDir: 'prev', sns: (si + 5) % 6 }),
+      snsNext: () => this.setState({ snsWas: si, snsDir: 'next', sns: (si + 1) % 6 })
+    };
+  }
+}
+</script>
+</body>
+</html>

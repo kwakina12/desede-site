@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Unofficial de Sede website redesign concept — personal non-commercial portfolio project. Not affiliated with de Sede AG.">
+<title>Header</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&amp;family=Noto+Sans+KR:wght@300;400;500&amp;display=swap">
+<style>
+body{margin:0}
+.hd{position:fixed;top:0;left:0;right:0;z-index:30;height:80px;padding:0 60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;font-family:'Pretendard','Noto Sans KR',sans-serif;transition:background-color .3s ease,color .3s ease}
+.hd::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;transition:opacity .3s ease;pointer-events:none}
+.hd:hover::before,.hd:focus-within::before,.hd.scrolled::before,.hd.isopen::before{opacity:1}
+.hd:hover,.hd:focus-within,.hd.scrolled{color:#111111 !important}
+.hd.scrolled .hd-logo img{filter:brightness(0)}
+.hd-logo img{transition:filter .3s ease}
+.hd:hover .hd-logo img,.hd:focus-within .hd-logo img{filter:brightness(0)}
+.hd a{color:inherit;text-decoration:none}
+.hd-logo{display:flex;align-items:center;min-height:44px}
+.hd-logo img{display:block;height:34px;width:auto}
+.hd-nav{display:flex;align-items:center;gap:72px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.hd-nav > a,.hd-has-mega > a{padding:8px 0;border-bottom:1px solid transparent}
+.hd-nav > a:hover,.hd-has-mega > a:hover,.hd-has-mega:hover > a{border-bottom-color:currentColor}
+.hd-has-mega{display:flex;align-items:center;height:80px}
+.mega{position:absolute;left:0;right:0;top:80px;background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#111111;padding:40px 60px 48px;box-sizing:border-box;text-transform:none;letter-spacing:normal;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.hd-has-mega:hover .mega,.hd-has-mega:focus-within .mega{opacity:1;visibility:visible;transform:none}
+.mega-in{max-width:1460px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.mg{display:flex;flex-direction:column;color:#111111}
+.mg-img{position:relative;display:block;height:220px;background:#FBF8F3;overflow:hidden}
+.mg-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:12%;box-sizing:border-box;transition:transform .6s ease}
+.mg.on:hover .mg-img img{transform:scale(1.05)}
+.mg-t{font-family:'Arsenica Trial','Bodoni Moda',serif;font-size:20px;margin-top:18px}
+.mg-go{display:inline-flex;align-items:center;gap:12px;margin-top:8px;font-size:11px;letter-spacing:.08em;color:#6b625b;text-transform:uppercase}
+.mg-go i{position:relative;display:block;width:28px;height:1px;background:currentColor;transition:width .3s ease}
+.mg-go i::after{content:"";position:absolute;right:0;top:0;width:7px;height:1px;background:currentColor;transform:rotate(30deg);transform-origin:right center}
+.mg.on:hover .mg-go{color:#111111}
+.mg.on:hover .mg-go i{width:44px}
+.mg.soon{cursor:default}
+.hd-tools{display:flex;gap:20px;align-items:center}
+.hd-btn{background:none;border:0;color:inherit;padding:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.hd-burger{display:none}
+.hd-panel{display:none}
+.hd-burger .hide{display:none}
+.hd-nav > a,.hd-has-mega > a{transition:border-color .3s ease,opacity .3s}
+@keyframes panelIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@media (max-width:1024px){
+  .hd{padding:0 32px}
+  .hd-nav{gap:36px}
+  .mega{padding:28px 32px 36px}
+  .mega-in{gap:16px}
+  .mg-img{height:160px}
+  .mg-t{font-size:17px}
+}
+@media (max-width:720px){
+  .hd{padding:0 12px 0 20px;height:64px}
+  .hd-nav{display:none}
+  .mega{display:none}
+  .hd-logo img{height:28px}
+  .hd-burger{display:flex}
+  .hd-panel{animation:panelIn .3s ease both;display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#111111;padding:12px 20px 28px;box-shadow:none}
+  .hd.isopen{color:#111111 !important}
+  .hd-panel a{border-bottom-color:rgba(17,17,17,.15) !important}
+  .hd.isopen .hd-logo img{filter:brightness(0)}
+  .hd-panel a{padding:18px 0;border-bottom:1px solid #e7e0d5;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#111111;text-decoration:none;min-height:44px;box-sizing:border-box}
+}
+</style>
+</helmet>
+<header class="{{hdCls}}" style="color: {{color}}">
+  <a class="hd-logo" href="Main.dc.html"><img src="/_blob/3790a4bd70bfc7982458f23d50a1ea5b.webp" alt="de Sede Switzerland 홈"></a>
+  <nav class="hd-nav" aria-label="주요 메뉴">
+    <div class="hd-has-mega">
+      <a href="Products.dc.html" style="{{prodStyle}}" aria-haspopup="true">Products</a>
+      <div class="mega" aria-label="제품 카테고리">
+        <div class="mega-in">
+          <a class="mg on" href="Products.dc.html"><span class="mg-img"><img src="/_blob/c524eaffc948b9ce07d88da9550dfc72.webp" alt=""></span><span class="mg-t">Sofas &amp; Loungers</span><span class="mg-go">Shop now <i aria-hidden="true"></i></span></a>
+          <div class="mg soon" aria-disabled="true"><span class="mg-img"><img src="/_blob/e63c3e07699d96b50f3caf79ef9130af.webp" alt=""></span><span class="mg-t">Beds &amp; Mattresses</span><span class="mg-go">Coming soon</span></div>
+          <div class="mg soon" aria-disabled="true"><span class="mg-img"><img src="/_blob/0c5e9a2e97cbb46f9decd2a5efcf6e31.webp" alt=""></span><span class="mg-t">Tables</span><span class="mg-go">Coming soon</span></div>
+          <div class="mg soon" aria-disabled="true"><span class="mg-img"><img src="/_blob/ef1c02d1299e1bf52a81f1c5b62f04ee.webp" alt=""></span><span class="mg-t">Chairs &amp; Armchairs</span><span class="mg-go">Coming soon</span></div>
+        </div>
+      </div>
+    </div>
+    <sc-for list="{{others}}" as="it" hint-placeholder-count="3">
+      <a href="{{it.href}}" style="{{it.style}}">{{it.label}}</a>
+    </sc-for>
+  </nav>
+  <div class="hd-tools">
+    <button class="hd-btn" aria-label="장바구니" type="button">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+    </button>
+    <button class="hd-btn" aria-label="검색" type="button">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
+    </button>
+    <button class="hd-btn hd-burger" aria-label="{{menuLabel}}" aria-expanded="{{expanded}}" type="button" onClick="{{toggle}}">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path class="{{burgerCls}}" d="M3 7h18M3 12h18M3 17h18"/><path class="{{closeCls}}" d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+    <nav class="hd-panel" aria-label="모바일 메뉴">
+      <sc-for list="{{items}}" as="it" hint-placeholder-count="4">
+        <a href="{{it.href}}">{{it.label}}</a>
+      </sc-for>
+    </nav>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"color":{"editor":"color","default":"#FFFFFF"},"current":{"editor":"text","default":""}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { open: false, scrolled: false }; }
+  componentDidMount() {
+    this.onScroll = () => {
+      const se = document.scrollingElement || document.documentElement;
+      const y = window.scrollY || (se && se.scrollTop) || 0;
+      const s = y > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    document.addEventListener('scroll', this.onScroll, { passive: true, capture: true });
+    this.onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); document.removeEventListener('scroll', this.onScroll, true); }
+  renderVals() {
+    const cur = this.props.current ?? '';
+    const base = [
+      { key: 'products', label: 'Products', href: 'Products.dc.html' },
+      { key: 'room', label: 'Room Concept', href: 'Showroom.dc.html' },
+      { key: 'service', label: 'Service', href: 'Service.dc.html' },
+      { key: 'about', label: 'About Us', href: 'About.dc.html' }
+    ];
+    const items = base.map((b) => ({ ...b, style: b.key === cur ? 'border-bottom-color: currentColor' : '' }));
+    return {
+      color: this.props.color ?? '#FFFFFF',
+      hdCls: 'hd' + (this.state.open ? ' isopen' : '') + (this.state.scrolled ? ' scrolled' : ''),
+      open: this.state.open,
+      menuLabel: this.state.open ? '메뉴 닫기' : '메뉴 열기',
+      expanded: this.state.open ? 'true' : 'false',
+      burgerCls: this.state.open ? 'hide' : '',
+      closeCls: this.state.open ? '' : 'hide',
+      toggle: () => this.setState({ open: !this.state.open }),
+      items,
+      prodStyle: items[0].style,
+      others: items.slice(1)
+    };
+  }
+}
+</script>
+</body>
+</html>

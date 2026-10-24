@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Unofficial de Sede website redesign concept — personal non-commercial portfolio project. Not affiliated with de Sede AG.">
+<title>de Sede Room Concept</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&amp;family=Noto+Sans+KR:wght@300;400;500&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#111111;font-family:'Pretendard','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.serif{font-family:'Arsenica Trial','Bodoni Moda',serif;font-weight:400}
+.page{position:relative;width:100%;overflow:hidden}
+.in{max-width:1440px;margin:0 auto;padding:0 60px}
+.ph{background:#e7e0d5;color:#785741;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:8px}
+.ph.dk{background:#2b2a28;color:#d8cfc2}
+.ph.br{background:#785741;color:#FBF8F3}
+.ph{position:relative;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sub .ph::after{content:"";position:absolute;inset:0;background:rgba(17,17,17,.38)}
+.off-g{position:relative}
+.cty{position:relative;z-index:1}
+.maps{position:absolute;left:-20px;top:50%;width:100%;height:130%;transform:translateY(-50%);z-index:-1;pointer-events:none}
+.maps img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain;object-position:left center;opacity:0;transform:scale(.97);transition:opacity .8s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.maps img.on{opacity:1;transform:none}
+.tag{display:inline-block;border:1px solid #BD9257;color:#785741;border-radius:999px;font-size:10px;letter-spacing:.14em;padding:3px 14px;margin-right:10px}
+.num{font-size:10px;color:#785741;letter-spacing:.1em;margin-right:8px}
+.lead{font-size:14px;line-height:1.9;color:#3a3633;font-weight:300}
+.sub{position:relative;height:max(520px,41.667vw);color:#FBF8F3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.sub .ph{position:absolute;inset:0}
+.sub h1{position:relative;font-size:64px;line-height:1.1;padding:0 20px}
+.sub span.s{position:relative;margin-top:56px;font-size:12px;letter-spacing:.14em;border-bottom:1px solid #BD9257;padding-bottom:6px}
+.mix{display:grid;grid-template-columns:1fr 1fr;min-height:540px}
+.mix-t{display:flex;flex-direction:column;justify-content:center;padding:60px max(60px,8vw)}
+.mix-t h2{font-size:30px;margin:18px 0 28px}
+.mix-t h3{font-size:13px;font-weight:500;color:#BD9257;margin-bottom:12px}
+.mix .ph{min-height:540px}
+.off{background:#FBF8F3;padding:100px 0 140px}
+.off h2{font-size:30px;margin:18px 0 0}
+.off-g{display:grid;grid-template-columns:6fr 5fr;gap:80px;align-items:center;margin-top:60px}
+.cty{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.cty button{background:none;border:0;padding:4px 0;cursor:pointer;font-family:'Arsenica Trial','Bodoni Moda',serif;font-size:clamp(34px,3.6vw,56px);line-height:1.2;white-space:nowrap;text-transform:uppercase;color:#a39a8f;text-align:left;display:flex;align-items:baseline;gap:14px;min-height:44px}
+.cty button:hover{color:#785741}
+.cty button.on{color:#111111;font-style:italic}
+.cty .n{font-family:'Pretendard','Noto Sans KR',sans-serif;font-style:normal;font-size:10px;letter-spacing:.1em;color:#785741}
+.vis .ph{height:420px}
+.pager{display:flex;align-items:center;gap:8px;justify-content:flex-end;margin-top:20px;color:#6b625b}
+.pager button{width:44px;height:44px;background:none;border:0;color:#6b625b;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.pager button:hover{color:#111111}
+.pager button svg{width:28px;height:14px}
+.pager span{font-size:22px;min-width:44px;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:80px}
+.cards figure{margin:0}
+.cards .ph{height:280px;position:relative}
+.cards .info{position:absolute;inset:auto 0 0 0;min-height:54%;z-index:2;display:flex;flex-direction:column;justify-content:center;background:rgba(251,248,243,.86);color:#3a3633;padding:4px 22px 6px;font-size:13px;line-height:1.45;text-align:left;letter-spacing:0;text-transform:none;opacity:0;transition:opacity .3s ease}
+.cards .info .r{display:grid;grid-template-columns:24px minmax(0,1fr);gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid rgba(107,98,91,.45)}
+.cards .info .r:last-child{border-bottom:0}
+.cards .info svg{display:block;width:22px;height:22px;color:#6b625b}
+.cards .ph:hover .info,.cards .ph:focus-within .info{opacity:1}
+.cards small{display:block;font-size:11px;color:#6b625b;margin-top:14px}
+.cards b{display:block;font-weight:400;font-size:14px;margin-top:4px}
+@media (max-width:1024px){
+  .in{padding:0 32px}
+  .sub{height:400px}
+  .sub h1{font-size:48px}
+  .mix{grid-template-columns:1fr}
+  .mix-t{padding:64px 32px}
+  .mix .ph{min-height:360px;order:-1}
+  .off{padding:72px 0 100px}
+  .off-g{grid-template-columns:1fr;gap:40px}
+  .cty button{font-size:44px}
+  .maps{left:auto;right:0;width:60%;height:120%}
+  .maps img{object-position:right center}
+  .cards{grid-template-columns:repeat(2,1fr);margin-top:56px}
+}
+@media (max-width:720px){
+  .in{padding:0 20px}
+  .sub{height:320px}
+  .sub h1{font-size:32px}
+  .sub span.s{margin-top:32px}
+  .mix-t{padding:48px 20px}
+  .mix-t h2{font-size:26px}
+  .mix .ph{min-height:260px}
+  .off{padding:56px 0 72px}
+  .off-g{margin-top:36px}
+  .cty button{font-size:34px}
+  .vis .ph{height:280px}
+  .cards{grid-template-columns:1fr;gap:28px}
+  .cards .ph{height:240px}
+}
+
+.sub h1{animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.vis .ph img{opacity:0}
+.vis .ph img.on{opacity:1;z-index:1;animation:wipeN 1s cubic-bezier(.7,0,.2,1) both}
+.vis .ph img.was{opacity:1;z-index:0}
+.vis .ph.prev img.on{animation-name:wipeP}
+@keyframes wipeN{from{clip-path:inset(0 0 0 100%);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+@keyframes wipeP{from{clip-path:inset(0 100% 0 0);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+.cards figure.ca{animation:cardA .8s cubic-bezier(.2,.7,.2,1) both}
+.cards figure.cb{animation:cardB .8s cubic-bezier(.2,.7,.2,1) both}
+.cards figure:nth-child(2){animation-delay:.08s}.cards figure:nth-child(3){animation-delay:.16s}.cards figure:nth-child(4){animation-delay:.24s}
+@keyframes cardA{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes cardB{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.cards .ph > img{transition:transform .8s ease}
+.cards .ph:hover > img{transform:scale(1.04)}
+.cty button{transition:color .3s,transform .3s}
+.cty button:hover{transform:translateX(8px)}
+@media (hover:none){.cards .info{opacity:1}}
+@media (max-width:1024px){
+  .cards .ph{height:340px !important}
+}
+@media (max-width:720px){
+  .mix .ph{min-height:300px !important}
+  .cty button{font-size:28px;white-space:normal}
+  .maps{width:70%;height:110%;opacity:.8}
+  .cards .ph{height:320px !important}
+  .cards .info{min-height:auto;padding:4px 16px}
+  .cards .info .r{padding:8px 0;font-size:12px}
+}
+
+/* safety: images always fill their frame */
+.ph > img{inset:0 !important;width:100% !important;height:100% !important;max-width:none !important}
+@media (prefers-reduced-motion:no-preference){
+  .rv-on .rvl{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .rvl.rv-in{opacity:1;transform:none}
+  .rv-on .off-g > .vis{transition-delay:.12s}
+  .rv-on .mix > .ph.rvl{opacity:1;transform:none}
+  .rv-on .mix > .ph > img{transform:scale(1.08);transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .mix > .ph.rv-in > img{transform:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div class="page" ref="{{pageRef}}">
+  <dc-import name="Header" color="#FFFFFF" current="room" hint-size="100%,80px"></dc-import>
+
+  <section class="sub">
+    <div class="ph dk"><img src="/_blob/8db705f679914e5392394394ec20b6ca.webp" alt="스튜디오 조명 아래의 가죽 체어와 사이드 테이블"></div>
+    <h1 class="serif">Show room &amp; References</h1>  </section>
+
+  <section class="mix">
+    <div class="mix-t">
+      <div><span class="num">01</span><span class="tag">DE SEDE</span></div>
+      <h2 class="serif">Mixture Showroom</h2>
+      <h3 style="font-weight: 300">쇼룸 첫발을 내딛다</h3>
+      <p class="lead">2017년에 제조사는 취리히(CHE)의 Mode Suisse에서 첫 번째 핸드백 컬렉션을 출시하고 로스앤젤레스(미국)에 첫 매장을 열었습니다.<br>2018년 드 세드(de Sede) 세미 아웃도어 컬렉션으로 세세한 부분까지 디자인된 세계에서 유일한 컬렉션을 선보였습니다.<br>온-오프라인에도 고객들이 우리의 가구를 앞에서 보는 듯한 느낌을 주기 위해서 많은 노력을 하였습니다.</p>
+    </div>
+    <div class="ph dk" style="min-height: 600px"><img src="/_blob/3eeb4232094ee1e2eafce776c2734fc8.webp" alt="쇼룸에 놓인 블랙 가죽 모듈 소파" width="1086" height="1003" style="aspect-ratio: 1086 / 1003; left: -1px"></div>
+  </section>
+
+  <section class="off">
+    <div class="in">
+      <div><span class="num">02</span><span class="tag">DE SEDE</span></div>
+      <h2 class="serif">Off-line Showroom</h2>
+      <div class="off-g">
+        <div class="cty" role="tablist" aria-label="국가 선택">
+          <div class="maps" aria-hidden="true"><sc-for list="{{maps}}" as="m" hint-placeholder-count="5"><img class="{{m.cls}}" src="{{m.src}}" alt=""></sc-for></div>
+          <sc-for list="{{countries}}" as="c" hint-placeholder-count="4">
+            <button type="button" role="tab" class="{{c.cls}}" onClick="{{c.pick}}"><span class="n">{{c.no}}</span>{{c.name}}</button>
+          </sc-for>
+        </div>
+        <div class="vis">
+          <div class="{{photoFrame}}"><sc-for list="{{photos}}" as="m" hint-placeholder-count="5"><img class="{{m.cls}}" src="{{m.src}}" alt="{{m.alt}}"></sc-for></div>
+          <div class="pager"><button type="button" aria-label="이전" onClick="{{prev}}"><svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M27 7H1M7 1L1 7l6 6"></path></svg></button><span class="serif">{{pageNo}}/{{total}}</span><button type="button" aria-label="다음" onClick="{{next}}"><svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 7h26M21 1l6 6-6 6"></path></svg></button></div>
+        </div>
+      </div>
+      <div class="cards">
+        <sc-for list="{{cards}}" as="k" hint-placeholder-count="4">
+          <figure class="{{k.cls}}">
+            <div class="ph {{k.tone}}" style="height: 400px"><img src="{{k.img}}" alt="{{k.title}}"><div class="info" style="{{k.infoStyle}}">
+              <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11.2A6.5 6.5 0 0112 3.3a6.5 6.5 0 016.5 6.5C18.5 14.8 12 21 12 21z"></path><circle cx="12" cy="9.8" r="2.3"></circle></svg><span>{{k.addr1}}<br>{{k.addr2}}</span></div>
+              <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.5a11 11 0 006.1 6.1l1.5-2.1 4.2 1.6V18a2.5 2.5 0 01-2.7 2.5A15.5 15.5 0 012.5 6.2 2.5 2.5 0 015 3.5z"></path></svg><span>{{k.tel}}</span></div>
+              <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg><span>OPEN: TUE-FRI AM09-PM06</span></div>
+              <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1"></rect><path d="M4 9.5h16M8.5 3v4M15.5 3v4M8 13.5h8M8 16.5h5"></path></svg><span>MON-SUNDAY OFF</span></div>
+            </div></div>
+            <small>{{k.country}}<b class="serif">{{k.title}}</b></small>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" bg="/_blob/ed0e6fc4ea48336ad191d5430cdcd8dd.webp" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1920,"height":3100}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { sel: 0, was: -1, dir: 'next', gen: 0 }; }
+  componentDidMount() {
+    const root = this.pageEl;
+    if (!root || typeof IntersectionObserver === 'undefined') return;
+    const els = root.querySelectorAll('.mix-t, .mix > .ph, .off .in > div:first-child, .off h2, .off-g > .cty, .off-g > .vis, .cards');
+    els.forEach((el) => el.classList.add('rvl'));
+    root.classList.add('rv-on');
+    this.io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting || en.boundingClientRect.top < 0) { en.target.classList.add('rv-in'); this.io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => this.io.observe(el));
+  }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+  renderVals() {
+    const names = ['United Kingdom', 'United States', 'Germany', 'Switzerland', 'Korea'];
+    const refs = {
+      0: ['DS-600 - St. Moritz', 'Gaudenzi Showroom', 'Museum Boijmans Van Beuningen', 'Private House'],
+      1: ['[쇼룸 이름]', '[쇼룸 이름]', '[쇼룸 이름]', '[쇼룸 이름]'],
+      2: ['[쇼룸 이름]', '[쇼룸 이름]', '[쇼룸 이름]', '[쇼룸 이름]'],
+      3: ['[쇼룸 이름]', '[쇼룸 이름]', '[쇼룸 이름]', '[쇼룸 이름]'],
+      4: ['[쇼룸 이름]', '[쇼룸 이름]', '[쇼룸 이름]', '[쇼룸 이름]']
+    };
+    const sel = this.state.sel;
+    const go = (i, dir) => { if (i === sel) return; this.setState({ was: sel, sel: i, dir, gen: this.state.gen + 1 }); };
+    const photos = ['/_blob/f0e78919abe0d68a1ff575b6c5f1854f.webp', '/_blob/5f4d3c3ee56971c06e06c6e772e7ed2f.webp', '/_blob/7e862bd93b51abd8b3e1cfc6505fb1c4.webp', '/_blob/82dd23339156c20a0690b20096f4daa1.webp', '/_blob/59bcd66b7f89f4a10885f77654ff6fbe.webp'];
+    const ctyImgs = ['/_blob/59bcd66b7f89f4a10885f77654ff6fbe.webp', '/_blob/5f4d3c3ee56971c06e06c6e772e7ed2f.webp', '/_blob/22b8f28110039e2df1fd25a23a882cb1.webp', '/_blob/599ad88e6d90cf7f8c72cf340e2f7012.webp', '/_blob/1afa1d068137b15478c443c4c2f64a4c.webp'];
+    const maps = ['/_blob/b6e96e3825802147dc6187203d020d0f.webp', '/_blob/bc7215b819b3a7af2e7638dc9c2dce7c.webp', '/_blob/7ae91666c9409621dcc3122f71030f3a.webp', '/_blob/592b060ae8097d48eadfdbf1f048c1ce.webp', '/_blob/d32ce38b3f7c8440f84ab04585b20d3e.webp'];
+    const cardImgs = ['/_blob/1afa1d068137b15478c443c4c2f64a4c.webp', '/_blob/87bb31acf5d01c9b587ad0e31e07264f.webp', '/_blob/7bd564fcf84df75b550152eb3fb67f64.webp', '/_blob/57247656a50fdea7f94f636de015d088.webp'];
+    const tones = ['br', '', 'dk', ''];
+    const info = {
+      0: [['18 Sloane Street', 'London SW1X 9NA, 영국', '+44 20 7235 0611'], ['42 Wigmore Street', 'London W1U 2RY, 영국', '+44 20 7486 3120'], ['7 King Street', 'Manchester M2 4LQ, 영국', '+44 161 834 2207'], ['15 George Street', 'Edinburgh EH2 2PF, 영국', '+44 131 225 4410']],
+      1: [['67 Lake Trail Ct', 'Winter Park, CO 80468 미국', '+1 970 726 0525'], ['8687 Melrose Ave', 'Los Angeles, CA 90069 미국', '+1 310 652 4410'], ['200 Lexington Ave', 'New York, NY 10016 미국', '+1 212 685 3020'], ['1 Design Center Pl', 'Boston, MA 02210 미국', '+1 617 338 5120']],
+      2: [['Kantstraße 17', '10623 Berlin, 독일', '+49 30 3150 7720'], ['Maximilianstraße 22', '80539 München, 독일', '+49 89 2155 3310'], ['Königsallee 60', '40212 Düsseldorf, 독일', '+49 211 8628 140'], ['Neuer Wall 41', '20354 Hamburg, 독일', '+49 40 3570 2290']],
+      3: [['Oederlin-Areal 2', '5300 Turgi, 스위스', '+41 56 250 05 25'], ['Bahnhofstrasse 30', '8001 Zürich, 스위스', '+41 44 211 3080'], ['Via Serlas 22', '7500 St. Moritz, 스위스', '+41 81 833 4120'], ['Rue du Rhône 48', '1204 Genève, 스위스', '+41 22 310 6650']],
+      4: [['서울특별시 강남구 도산대로 450', '06062 대한민국', '+82 2 517 0525'], ['서울특별시 용산구 이태원로 245', '04348 대한민국', '+82 2 792 3310'], ['부산광역시 해운대구 센텀남대로 35', '48058 대한민국', '+82 51 745 2210'], ['경기도 성남시 분당구 판교역로 146', '13529 대한민국', '+82 31 707 4410']]
+    };
+    return {
+      pageRef: (el) => { this.pageEl = el; },
+      countries: names.map((n, i) => ({ name: n, no: '0' + (i + 1), cls: i === sel ? 'on' : '', pick: () => go(i, i < sel ? 'prev' : 'next') })),
+      maps: maps.map((m, i) => ({ src: m, cls: i === sel ? 'on' : '' })),
+      photoFrame: 'ph dk' + (this.state.dir === 'prev' ? ' prev' : ''),
+      photos: photos.map((p, i) => ({ src: p, alt: names[i] + ' 쇼룸', cls: i === sel ? 'on' : (i === this.state.was ? 'was' : '') })),
+      current: { photo: photos[sel], name: names[sel], img: ctyImgs[sel], map: maps[sel], mapCls: sel === 4 ? 'map kr' : 'map' },
+      pageNo: sel + 1,
+      total: names.length,
+      prev: () => go((sel + names.length - 1) % names.length, 'prev'),
+      next: () => go((sel + 1) % names.length, 'next'),
+      cards: refs[sel].map((t, i) => ({ cls: this.state.gen % 2 ? 'cb' : 'ca', title: t, country: names[sel], tone: tones[i], infoStyle: '', img: cardImgs[(i + sel) % cardImgs.length], addr1: info[sel][i][0], addr2: info[sel][i][1], tel: info[sel][i][2] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

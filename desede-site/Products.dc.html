@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Unofficial de Sede website redesign concept — personal non-commercial portfolio project. Not affiliated with de Sede AG.">
+<title>de Sede Products</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&amp;family=Noto+Sans+KR:wght@300;400;500&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#111111;font-family:'Pretendard','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.serif{font-family:'Arsenica Trial','Bodoni Moda',serif;font-weight:400}
+.page{position:relative;width:100%;overflow:hidden}
+.in{max-width:1440px;margin:0 auto;padding:0 60px}
+.ph{background:#e7e0d5;color:#785741;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:8px}
+.ph.dk{background:#2b2a28;color:#d8cfc2}
+.ph.br{background:#785741;color:#FBF8F3}
+.ph{position:relative;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sub .ph::after{content:"";position:absolute;inset:0;background:rgba(17,17,17,.38)}
+.quote .ph::after{content:"";position:absolute;inset:0;background:rgba(17,17,17,.42)}
+.house-row .ph img,.grid .ph img{transition:transform .6s ease}
+.house-row figure:hover .ph img,.grid figure:hover .ph img{transform:scale(1.04)}
+.tag{display:inline-block;border:1px solid #BD9257;color:#785741;border-radius:999px;font-size:10px;letter-spacing:.14em;padding:3px 14px}
+.lead{font-size:14px;line-height:1.9;color:#3a3633;font-weight:300}
+.sub{position:relative;height:max(520px,41.667vw);color:#FBF8F3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.sub .ph{position:absolute;inset:0}
+.sub h1{position:relative;font-size:64px;line-height:1.1}
+.sub span.s{position:relative;margin-top:56px;font-size:12px;letter-spacing:.14em;border-bottom:1px solid #BD9257;padding-bottom:6px}
+.coll{padding:120px 0 0}
+.coll-g{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start}
+.coll h2{font-size:34px;line-height:1.25;margin-top:18px}
+.collage{position:relative;aspect-ratio:1187/735;margin-top:80px}
+.collage > .ph{position:absolute}
+.collage .a{left:0;top:0;width:22.2%;height:63%}
+.collage .b{left:36%;top:0;width:64%;height:63%}
+.collage .c{left:24.9%;top:55.1%;width:21%;height:44.9%;z-index:2}
+.collage .c2{left:47.1%;top:55.1%;width:21%;height:44.9%;z-index:2}
+.collage .y{position:absolute;left:73%;right:9%;bottom:0;display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;color:#785741;white-space:nowrap}
+.collage .ph img{transition:transform .9s ease}
+.collage .ph:hover img{transform:scale(1.04)}
+.house{padding:140px 0 120px}
+.house-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+.house-h h2{font-size:56px;color:#785741}
+.house-h a{font-size:11px;letter-spacing:.14em;min-height:44px;display:flex;align-items:center}
+.house-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:56px 24px}
+.house-row figure,.grid figure{margin:0}
+.house-row .ph{height:360px}
+.pn{font-size:18px;line-height:1.3;margin-top:20px;display:block;color:#111111}
+.pn.serif{font-family:'Pretendard','Noto Sans KR',sans-serif}
+.pp{font-size:16px;line-height:1.4;color:#6b625b;margin-top:6px;display:block;letter-spacing:.01em}
+.quote{position:relative;height:600px;color:#FBF8F3;display:flex;align-items:center;justify-content:space-between;padding:0 max(60px,calc((100% - 1440px)/2 + 60px))}
+.quote .ph{position:absolute;inset:0}
+.quote h2{position:relative;font-size:48px;line-height:1.1;max-width:360px}
+.quote h2.r{text-align:right}
+.list{padding:140px 0}
+.list-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.list-h .num{font-size:10px;color:#9a928a;letter-spacing:.1em;margin-right:8px}
+.list-h h2{font-size:48px;line-height:1.1;margin-top:18px}
+.list-h button{background:none;border:0;font-size:13px;letter-spacing:.08em;min-height:44px;cursor:pointer;color:#3a3633;display:flex;align-items:center;gap:8px;font-family:inherit;padding:0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:100px 24px}
+.grid .row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.grid .acts{display:flex;align-items:center;gap:2px;margin-top:20px;margin-right:-6px;color:#6b625b}
+.grid .acts button{background:none;border:0;width:32px;height:32px;color:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.grid .acts button:hover{color:#111111}
+.grid .ph{height:auto;aspect-ratio:1/1;background:#FBF8F3}
+.grid .ph img.cut{object-fit:contain;padding:9%;transition:opacity .5s ease,transform .6s ease}
+.grid .ph img.room{opacity:0;transition:opacity .5s ease,transform .8s ease}
+.grid figure:hover .ph img.room{opacity:1}
+.grid figure:hover .ph img.cut{opacity:0}
+.reviews{background:#FBF8F3;padding:120px 0}
+.reviews-g{display:grid;grid-template-columns:4fr 8fr;gap:80px;align-items:center}
+.reviews h2{font-size:28px;margin:16px 0 18px}
+.rvw{display:grid;grid-template-columns:1.6fr 1fr;gap:32px;align-items:end}
+.rvw .rv-a{height:420px}
+.rvw .rv-b{height:260px}
+.pager{display:flex;align-items:center;gap:16px;margin-top:36px;justify-content:flex-end}
+.pager button{width:44px;height:44px;background:none;border:0;color:#6b625b;cursor:pointer;font-size:18px}
+.pager button:hover{color:#111111}
+@media (max-width:1024px){
+  .in{padding:0 32px}
+  .sub{height:400px}
+  .sub h1{font-size:48px}
+  .coll{padding-top:80px}
+  .coll-g{grid-template-columns:1fr;gap:28px}
+  .collage{margin-top:56px}
+  .collage .y{left:auto;right:0;justify-content:flex-end;gap:24px;font-size:11px}
+  .house{padding:100px 0 80px}
+  .house-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 20px}
+  .house-row .ph{height:auto;aspect-ratio:4/3}
+  .house-h h2{font-size:44px}
+  .quote{height:340px;padding:0 32px}
+  .quote h2{font-size:34px}
+  .list{padding:100px 0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:72px 20px}
+  .reviews{padding:80px 0}
+  .reviews-g{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:720px){
+  .in{padding:0 20px}
+  .sub{height:320px}
+  .sub h1{font-size:36px}
+  .sub span.s{margin-top:32px}
+  .coll{padding-top:56px}
+  .coll h2{font-size:26px}
+  .collage{aspect-ratio:auto;display:grid;grid-template-columns:2fr 3fr;gap:16px;margin-top:40px}
+  .collage > .ph{position:relative;left:auto;top:auto;width:auto;height:auto}
+  .collage .c,.collage .c2{grid-column:auto}
+  .collage .a,.collage .b{height:220px}
+  .collage .c,.collage .c2{height:200px}
+  .collage .c2{grid-column:span 1}
+  .collage .y{display:none}
+  .house{padding:72px 0 56px}
+  .house-h h2{font-size:34px}
+  .house-row{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:12px}
+  .house-row figure{flex:0 0 72%;scroll-snap-align:start}
+  .house-row .ph{height:280px;aspect-ratio:auto}
+  .quote{height:260px;padding:0 20px}
+  .quote h2{font-size:26px;max-width:160px}
+  .list{padding:64px 0}
+  .grid{grid-template-columns:1fr;gap:56px}
+  .list-h h2{font-size:32px}
+  .pn{margin-top:18px;font-size:17px}
+  .grid .acts{margin-top:16px}
+  .grid .ph{height:auto}
+  .reviews{padding:64px 0}
+  .rvw{grid-template-columns:1fr}
+  .rvw .rv-b{display:none}
+  .rvw .rv-a{height:300px}
+}
+
+.sub h1{animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(30px);letter-spacing:.06em}to{opacity:1;transform:none}}
+.grid .acts button.on{color:#785741}
+.grid .acts button.on svg path{fill:currentColor}
+.rv-cap{display:grid;margin-top:24px}
+.rv-cap p{grid-area:1/1;font-size:14px;color:#3a3633;line-height:1.7;opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease;visibility:hidden}
+.rv-cap p.on{opacity:1;transform:none;visibility:visible;transition-delay:.25s}
+.rv-cap b{display:block;font-weight:500;color:#111111;margin-top:8px;font-size:13px}
+.pager span{font-size:20px;min-width:52px;text-align:center}
+@media (max-width:1024px){
+  .quote{height:380px !important}
+}
+@media (max-width:720px){
+  .quote{height:380px !important;flex-direction:column;justify-content:space-between;align-items:stretch;padding:56px 20px !important}
+  .quote h2{max-width:none;font-size:30px}
+  .quote h2.r{text-align:right}
+  .list-h{flex-direction:column;align-items:flex-start;gap:16px}
+}
+
+/* safety: images always fill their frame */
+.ph > img{inset:0 !important;width:100% !important;height:100% !important;max-width:none !important}
+@media (prefers-reduced-motion:no-preference){
+  .rv-on .rvl{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .rvl.rv-in{opacity:1;transform:none}
+  .rv-on .house-row figure:nth-child(2),.rv-on .grid figure:nth-child(3n+2),.rv-on .collage .b,.rv-on .reviews-g > div:nth-child(2){transition-delay:.12s}
+  .rv-on .house-row figure:nth-child(3),.rv-on .grid figure:nth-child(3n),.rv-on .collage .c{transition-delay:.24s}
+  .rv-on .house-row figure:nth-child(4),.rv-on .collage .c2{transition-delay:.36s}
+  .rv-on .quote.rvl{opacity:1;transform:none}
+  .rv-on .quote .ph > img{transform:scale(1.08);transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .quote.rv-in .ph > img{transform:none}
+  .rv-on .quote h2{opacity:0;transform:translateY(20px);transition:opacity 1s ease .3s,transform 1s cubic-bezier(.2,.7,.2,1) .3s}
+  .rv-on .quote.rv-in h2{opacity:1;transform:none}
+}
+/* review slide change */
+.rv-f img{opacity:0}
+.rv-f img.on{opacity:1;z-index:1;animation:rvNext 1s cubic-bezier(.7,0,.2,1) both}
+.rv-f img.was{opacity:1;z-index:0}
+.rv-f.prev img.on{animation-name:rvPrev}
+.rv-b.rv-f img.on{animation-delay:.1s}
+@keyframes rvNext{from{clip-path:inset(0 0 0 100%);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+@keyframes rvPrev{from{clip-path:inset(0 100% 0 0);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div class="page" ref="{{pageRef}}">
+  <dc-import name="Header" color="#FFFFFF" current="products" hint-size="100%,80px"></dc-import>
+
+  <section class="sub">
+    <div class="ph dk"><img src="/_blob/2dfd63d60207c8833947239e0e78ab2d.webp" alt="브라운 가죽 질감 클로즈업" width="1672" height="941" style="height: auto; aspect-ratio: 1672 / 941"></div>
+    <h1 class="serif">Sofas &amp; Loungers</h1>
+  </section>
+
+  <section class="coll">
+    <div class="in">
+      <div class="coll-g">
+        <div><span class="tag">DE SEDE</span><h2 class="serif">Our collection<br>Sculptures 2021-2022</h2></div>
+        <p class="lead">드 세데의 컬렉션은 가죽의 질감과 조형미를 중심으로 공간에 하나의 작품처럼 놓이는 가구를 제안합니다.</p>
+      </div>
+      <div class="collage">
+        <div class="ph a"><img src="/_blob/81cbbcf5dd601c4120faf9632a24881e.webp" alt="가죽 암체어와 원목 사이드 테이블" style="height: 370px"></div>
+        <div class="ph dk b"><img src="/_blob/599ad88e6d90cf7f8c72cf340e2f7012.webp" alt="호수에 비친 마터호른"></div>
+        <div class="ph br c"><img src="/_blob/228b4b60d5d08d2ccb8beb9089915490.webp" alt="계단 옆 브라운 가죽 모듈 소파" style="object-position: 50% 100%"></div>
+        <div class="ph br c2"><img src="/_blob/e396afae2f7b14c70ffab533e2fb5dae.webp" alt="정원이 보이는 거실의 곡선 모듈 소파"></div>
+        <div class="y"><span>2016</span><span>COLLECTION</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="house">
+    <div class="in">
+      <div class="house-h"><h2 class="serif" style="font-size: 48px">HOUSE</h2><a href="Products.dc.html">VIEW ALL →</a></div>
+      <div class="house-row">
+        <figure><div class="ph"><img src="/_blob/e1387463cc7fd23b5c2c1e8716cf4804.webp" alt="DS-5" width="4080" height="5440" style="height: auto; aspect-ratio: 4080 / 5440"></div><span class="pn serif" style="font-size: 16px">DS-5</span><span class="pp" style="font-size: 18px">10,380,000₩</span></figure>
+        <figure><div class="ph"><img src="/_blob/f3cafc6586cdf75d0f68f1eb177ed407.webp" alt="DS-1025" width="1791" height="2712" style="height: 363px; aspect-ratio: 1791 / 2712; width: 319px"></div><span class="pn serif" style="font-size: 16px">DS-1025</span><span class="pp" style="font-size: 18px">7,276,000₩</span></figure>
+        <figure><div class="ph"><img src="/_blob/666d42c53b143182849487d66e4e33f7.webp" alt="DS-47" width="8089" height="5393" style="height: 361px; aspect-ratio: 8089 / 5393"></div><span class="pn serif" style="font-size: 16px">DS-47</span><span class="pp" style="font-size: 18px">8,380,000₩</span></figure>
+        <figure><div class="ph"><img src="/_blob/8db705f679914e5392394394ec20b6ca.webp" alt="DS-80"></div><span class="pn serif" style="font-size: 16px">DS-80</span><span class="pp" style="font-size: 18px">5,940,000₩</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" aria-label="배너">
+    <div class="ph dk"><img src="/_blob/8d7602c0849c174722c11e04f1131985.webp" alt="숲이 내다보이는 거실 전경" width="4096" height="1611" style="height: auto; aspect-ratio: 4096 / 1611"></div>
+    <h2 class="serif">MAKE SPACE<br>FOR THE</h2>
+    <h2 class="serif r">THINGS THAT<br>MATTER</h2>
+  </section>
+
+  <section class="list">
+    <div class="in">
+      <div class="list-h">
+        <div><span class="num">02</span><span class="tag" style="border-width: 0.5px">DE SEDE</span><h2 class="serif">Sofas &amp; Loungers</h2></div>
+        <button type="button">FILTERS <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h13M20 8h1M3 16h1M8 16h13"></path><circle cx="18" cy="8" r="2"></circle><circle cx="6" cy="16" r="2"></circle></svg></button>
+      </div>
+      <div class="grid">
+        <sc-for list="{{items}}" as="p" hint-placeholder-count="7">
+          <figure><div class="ph"><img class="room" src="{{p.img}}" alt="" aria-hidden="true"><img class="cut" src="{{p.cut}}" alt="{{p.name}}"></div><div class="row"><div><span class="pn serif" style="font-size: 16px">{{p.name}}</span><span class="pp" style="font-size: 18px">{{p.price}}</span></div><div class="acts"><button type="button" aria-label="{{p.name}} 카탈로그 다운로드"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"></path></svg></button><button type="button" class="{{p.likeCls}}" aria-pressed="{{p.liked}}" aria-label="{{p.name}} 찜하기" onClick="{{p.like}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 20s-7-4.500-7-10a4 4 0 017-2.500A4 4 0 0119 10c0 5.500-7 10-7 10z"></path></svg></button></div></div></figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="in">
+      <div class="reviews-g">
+        <div><span class="tag">DE SEDE</span><h2 class="serif">Users' reviews</h2><p class="lead">드 세데를 직접 경험한 고객들의 이야기를 소개합니다.</p></div>
+        <div>
+          <div class="rvw"><figure style="margin:0"><div class="{{rvFrameA}}"><sc-for list="{{rvA}}" as="m" hint-placeholder-count="5"><img class="{{m.cls}}" src="{{m.src}}" alt="고객 후기 사진"></sc-for></div><figcaption class="rv-cap" aria-live="polite"><sc-for list="{{rvCaps}}" as="c" hint-placeholder-count="5"><p class="{{c.cls}}">“{{c.text}}”<b>{{c.who}}</b></p></sc-for></figcaption></figure><div class="{{rvFrameB}}"><sc-for list="{{rvB}}" as="m" hint-placeholder-count="5"><img class="{{m.cls}}" src="{{m.src}}" alt="고객 후기 사진"></sc-for></div></div>
+          <div class="pager"><button type="button" aria-label="이전 후기" onClick="{{rvPrev}}">←</button><span class="serif">{{rvNo}}/5</span><button type="button" aria-label="다음 후기" onClick="{{rvNext}}">→</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" bg="/_blob/255847101d110893346dc8322f52cf62.webp" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1920,"height":3700}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { likes: {}, rv: 0, rvWas: -1, rvDir: 'next' }; }
+  componentDidMount() {
+    const root = this.pageEl;
+    if (!root || typeof IntersectionObserver === 'undefined') return;
+    const els = root.querySelectorAll('.coll-g > *, .collage > .ph, .house-h, .house-row figure, .quote, .list-h, .grid figure, .reviews-g > div');
+    els.forEach((el) => el.classList.add('rvl'));
+    root.classList.add('rv-on');
+    this.io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting || en.boundingClientRect.top < 0) { en.target.classList.add('rv-in'); this.io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => this.io.observe(el));
+  }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+  renderVals() {
+    const names = ['DS-5', 'DS-47', 'DS-161', 'DS-707', 'DS-164', 'DS-600', 'DS-1025'];
+    const imgs = [
+      '/_blob/22b8f28110039e2df1fd25a23a882cb1.webp',
+      '/_blob/1afa1d068137b15478c443c4c2f64a4c.webp',
+      '/_blob/8db705f679914e5392394394ec20b6ca.webp',
+      '/_blob/57247656a50fdea7f94f636de015d088.webp',
+      '/_blob/7bd564fcf84df75b550152eb3fb67f64.webp',
+      '/_blob/59bcd66b7f89f4a10885f77654ff6fbe.webp',
+      '/_blob/87bb31acf5d01c9b587ad0e31e07264f.webp'
+    ];
+    const cuts = [
+      '/_blob/e4e8e3b53e402cafc6e77e4c8e94e86b.webp',
+      '/_blob/56e2719d6208c6b84700085ea39c945d.webp',
+      '/_blob/67b6db853c1e50340591cf6bb4737b2d.webp',
+      '/_blob/d833c83d0a70dc0922015913aaffb85d.webp',
+      '/_blob/5419394b039b1b0765962b66f374dcbf.webp',
+      '/_blob/3133f9b014d655fcbc0614cac63494b3.webp',
+      '/_blob/df6fdfd9ab9bc9d19fd632b8a929b067.webp'
+    ];
+    const prices = ['12,480,000₩', '9,860,000₩', '15,320,000₩', '7,940,000₩', '18,760,000₩', '24,500,000₩', '11,280,000₩'];
+    const likes = this.state.likes;
+    const reviews = [
+      { a: '/_blob/22b8f28110039e2df1fd25a23a882cb1.webp', b: '/_blob/8db705f679914e5392394394ec20b6ca.webp', text: '거실에 두는 순간 공간의 분위기가 달라졌어요. 가죽 촉감이 정말 부드럽습니다.', who: '김서연 · DS-707' },
+      { a: '/_blob/59bcd66b7f89f4a10885f77654ff6fbe.webp', b: '/_blob/57247656a50fdea7f94f636de015d088.webp', text: '3년째 사용 중인데 처음보다 더 멋스럽게 길들여졌어요.', who: 'Daniel K. · DS-21' },
+      { a: '/_blob/7bd564fcf84df75b550152eb3fb67f64.webp', b: '/_blob/1afa1d068137b15478c443c4c2f64a4c.webp', text: '모듈을 이리저리 바꿔 배치할 수 있어서 이사 후에도 그대로 쓰고 있습니다.', who: '이준호 · DS-600' },
+      { a: '/_blob/1afa1d068137b15478c443c4c2f64a4c.webp', b: '/_blob/87bb31acf5d01c9b587ad0e31e07264f.webp', text: '쇼룸에서 직접 앉아보고 결정했어요. 상담도 친절했습니다.', who: '박지민 · DS-164' },
+      { a: '/_blob/57247656a50fdea7f94f636de015d088.webp', b: '/_blob/22b8f28110039e2df1fd25a23a882cb1.webp', text: '배송까지 오래 걸렸지만 기다린 보람이 있는 완성도예요.', who: 'Sophie L. · DS-161' }
+    ];
+    const ri = this.state.rv;
+    return {
+      items: names.map((n, i) => ({ name: n, price: prices[i % prices.length], img: imgs[i % imgs.length], cut: cuts[i % cuts.length], liked: likes[n] ? 'true' : 'false', likeCls: likes[n] ? 'on' : '', like: () => this.setState({ likes: { ...likes, [n]: !likes[n] } }) })),
+      pageRef: (el) => { this.pageEl = el; },
+      rvFrameA: 'ph br rv-a rv-f' + (this.state.rvDir === 'prev' ? ' prev' : ''),
+      rvFrameB: 'ph rv-b rv-f' + (this.state.rvDir === 'prev' ? ' prev' : ''),
+      rvA: reviews.map((r, i) => ({ src: r.a, cls: i === ri ? 'on' : (i === this.state.rvWas ? 'was' : '') })),
+      rvB: reviews.map((r, i) => ({ src: r.b, cls: i === ri ? 'on' : (i === this.state.rvWas ? 'was' : '') })),
+      rvCaps: reviews.map((r, i) => ({ text: r.text, who: r.who, cls: i === ri ? 'on' : '' })),
+      rvNo: ri + 1,
+      rvPrev: () => this.setState({ rvWas: ri, rvDir: 'prev', rv: (ri + 4) % 5 }),
+      rvNext: () => this.setState({ rvWas: ri, rvDir: 'next', rv: (ri + 1) % 5 })
+    };
+  }
+}
+</script>
+</body>
+</html>

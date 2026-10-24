@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Unofficial de Sede website redesign concept — personal non-commercial portfolio project. Not affiliated with de Sede AG.">
+<title>de Sede About Us</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&amp;family=Noto+Sans+KR:wght@300;400;500&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#111111;font-family:'Pretendard','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.serif{font-family:'Arsenica Trial','Bodoni Moda',serif;font-weight:400}
+.page{position:relative;width:100%;overflow:hidden}
+.in{max-width:1440px;margin:0 auto;padding:0 60px}
+.ph{background:#e7e0d5;color:#785741;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:8px}
+.ph.dk{background:#2b2a28;color:#d8cfc2}
+.ph.br{background:#785741;color:#FBF8F3}
+.ph{position:relative;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sub .ph::after{content:"";position:absolute;inset:0;background:rgba(17,17,17,.38)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 24px;background:#111111;color:#FBF8F3;font-size:12px;letter-spacing:.08em}
+.btn:hover{background:#785741}
+.num{font-size:10px;color:#9a928a;letter-spacing:.1em;margin-right:8px}
+.tag{display:inline-block;border:1px solid #b9ad9f;color:#6b625b;border-radius:999px;font-size:10px;letter-spacing:.14em;padding:3px 14px}
+.lead{font-size:15px;line-height:1.75;color:#3a3633;font-weight:300}
+.lead + .lead{margin-top:16px}
+.h2x{font-size:44px;line-height:1.15;font-weight:500;margin-top:22px}
+.sub{position:relative;height:max(520px,41.667vw);color:#FBF8F3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.sub .ph{position:absolute;inset:0}
+.sub h1{position:relative;font-size:64px;line-height:1.1}
+.sec{padding:160px 0;position:relative}
+.sec.iv{background:#FBF8F3}
+.ghost{position:absolute;left:-40px;top:60px;font-size:200px;line-height:1;color:#efe9df;writing-mode:vertical-rl;transform:rotate(180deg);pointer-events:none;white-space:nowrap;will-change:transform;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.sec.s1{overflow:hidden}
+.sec.s1 .ghost{z-index:0;opacity:.4;color:#ebe3d7}
+.sec.s1 > .in{position:relative;z-index:1}
+
+/* 01 living */
+.two{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr);gap:40px 80px;align-items:start}
+.two h2{font-size:44px;line-height:1.15;font-weight:500;margin-top:22px}
+.two .lead{padding-top:74px}
+.live{display:grid;grid-template-columns:minmax(0,54fr) minmax(0,46fr);gap:0 9%;align-items:center;margin-top:110px}
+.live-img{position:relative;aspect-ratio:602/598}
+.live-img .a{position:absolute;left:0;top:0;width:69.4%;height:87.3%}
+.live-img .b{position:absolute;left:62.8%;top:54.3%;width:37.5%;height:45.7%;z-index:2}
+.cols{display:flex;flex-direction:column;gap:48px;padding-top:60px}
+.cols h3{font-size:15px;letter-spacing:.02em;color:#111111;margin-bottom:14px;font-weight:500}
+
+/* 02 ceo */
+.ceo{display:grid;grid-template-columns:7fr 5fr;gap:80px;align-items:center}
+.ceo .big{height:560px}
+.ceo .pt{width:220px;height:260px;margin:28px 0}
+
+/* 03 team */
+.team{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:80px;align-items:start}
+.team .h2x{margin-bottom:64px}
+.team-img{aspect-ratio:1175/829}
+
+/* 04 history */
+.hist-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px 80px;flex-wrap:wrap}
+.hist-head .lead{max-width:460px}
+.tl-scroll{margin-top:64px;padding:10px 12px 4px 4px;overflow-x:auto;scrollbar-width:none}
+.tl-scroll::-webkit-scrollbar{display:none}
+.tl-years{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));min-width:640px;padding-right:28px;position:relative}
+.tl-years::after{content:"";position:absolute;right:0;top:6px;width:28px;height:1px;background:#d6cfc4}
+.tl-years::before{content:"";position:absolute;right:0;top:2px;width:8px;height:8px;border-top:1px solid #b9ad9f;border-right:1px solid #b9ad9f;transform:rotate(45deg)}
+.tl-years button{position:relative;width:100%;background:none;border:0;padding:0;min-height:88px;display:flex;flex-direction:column;align-items:flex-start;gap:18px;cursor:pointer;font-family:inherit;color:#9a928a;text-align:left}
+.tl-years button::before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background:#d6cfc4}
+.tl-years button::after{content:"";position:absolute;left:0;top:6px;height:1px;width:0;background:#785741;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.tl-years button.past::after{width:100%}
+.tl-years button.past .dot{border-color:#785741}
+.tl-years .dot{position:relative;z-index:1;width:13px;height:13px;border-radius:50%;background:#FFFFFF;border:1px solid #b9ad9f;transition:background .3s,border-color .3s,transform .3s}
+.tl-years .yr{font-family:'Arsenica Trial','Bodoni Moda',serif;font-size:30px;line-height:1;transition:color .3s}
+.tl-years button:hover{color:#785741}
+.tl-years button.on{color:#111111}
+.tl-years button.on .dot{background:#785741;border-color:#785741;transform:scale(1.35)}
+.tl-card{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);margin-top:40px;background:#FBF8F3}
+.tl-img{aspect-ratio:4/3;height:100%}
+.tl-txt{display:flex;flex-direction:column;padding:64px 64px 48px;min-width:0}
+.tl-txt .big{font-family:'Arsenica Trial','Bodoni Moda',serif;font-size:104px;line-height:.9;color:#e2d6c5}
+.tl-txt h3{font-size:24px;font-weight:500;line-height:1.35;margin:28px 0 20px}
+.tl-nav{display:flex;align-items:center;gap:6px;margin-top:auto;padding-top:40px;color:#6b625b}
+.tl-nav button{width:44px;height:44px;background:none;border:0;padding:0;color:#6b625b;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.tl-nav button:hover{color:#111111}
+.tl-nav svg{width:28px;height:14px}
+.tl-nav span{font-family:'Arsenica Trial','Bodoni Moda',serif;font-size:20px;min-width:52px;text-align:center}
+
+.wide{height:440px}
+
+/* 05 homeland */
+.home-t{text-align:center;max-width:1100px;margin:0 auto}
+.home-g{display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);gap:0 7%;margin-top:90px;align-items:start}
+.home-l{position:relative;display:flex;align-items:flex-end;gap:32px;padding:180px 0 0 60px}
+.s-wrap{position:relative;flex:0 0 46%}
+.home-l .s-img{position:relative;width:100%;aspect-ratio:312/441;z-index:1}
+.home-l .lead{flex:1 1 auto;padding-bottom:4px}
+.ring{position:absolute;left:-112px;top:-112px;width:240px;height:240px;z-index:0;pointer-events:none;animation:spin 28s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.home-b{aspect-ratio:721/618}
+
+/* 06 leather */
+.leather{display:grid;grid-template-columns:minmax(0,62fr) minmax(0,32fr);gap:0 6%;align-items:start}
+.leather .l-img{aspect-ratio:1725/1201}
+.leather .h2x{margin-bottom:28px}
+.leather-b{position:relative;margin-top:120px;text-align:center}
+.lb-stage{position:relative}
+.lb-ghost{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:0;pointer-events:none;font-size:clamp(90px,10vw,180px);line-height:1;color:#ebe4da;white-space:nowrap}
+.lb-ghost div{display:grid;grid-template-columns:minmax(0,1fr) 46% minmax(0,1fr);align-items:center;will-change:transform;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.lb-ghost span:first-child{grid-column:1;justify-self:end;margin-right:-.32em}
+.lb-ghost span:last-child{grid-column:3;justify-self:start;margin-left:-.32em}
+.lb-img{position:relative;z-index:1;width:46%;margin:0 auto;aspect-ratio:1696/1235}
+.leather-b .lead{position:relative;z-index:1;max-width:720px;margin:56px auto 36px;word-break:keep-all}
+
+@media (max-width:1024px){
+  .in{padding:0 32px}
+  .sub{height:400px}
+  .sub h1{font-size:48px}
+  .sec{padding:110px 0}
+  .ghost{font-size:140px;left:-30px}
+  .h2x,.two h2{font-size:38px}
+  .two,.ceo,.team,.leather{grid-template-columns:1fr;gap:40px}
+  .two .lead{padding-top:0}
+  .live{grid-template-columns:1fr;gap:56px;margin-top:64px}
+  .live-img{width:100%;max-width:640px}
+  .cols{flex-direction:row;gap:40px;padding-top:0}
+  .cols > div{flex:1 1 0;min-width:0}
+  .ceo .big{height:440px}
+  .team .h2x{margin-bottom:28px}
+  .tl-card{grid-template-columns:1fr}
+  .tl-txt{padding:44px 40px 36px}
+  .tl-txt .big{font-size:80px}
+  .wide{height:340px}
+  .home-g{grid-template-columns:1fr;gap:64px;margin-top:56px}
+  .home-b{order:-1}
+  .home-l{padding:120px 0 0 110px}
+  .s-wrap{flex-basis:40%}
+  .lb-img{width:70%}
+  .lb-ghost{display:none}
+}
+@media (max-width:720px){
+  .in{padding:0 20px}
+  .sub{height:320px}
+  .sub h1{font-size:34px}
+  .sec{padding:72px 0}
+  .ghost{display:none}
+  .h2x,.two h2{font-size:30px}
+  .lead{font-size:14px}
+  .live{gap:40px;margin-top:48px}
+  .cols{flex-direction:column;gap:32px}
+  .ceo .big{height:300px}
+  .tl-scroll{margin:48px -20px 0;padding:0 20px}
+  .tl-years .yr{font-size:24px}
+  .tl-card{margin-top:24px}
+  .tl-txt{padding:32px 22px 24px}
+  .tl-txt .big{font-size:60px}
+  .tl-txt h3{font-size:19px;margin:20px 0 14px}
+  .wide{height:220px}
+  .home-t br{display:none}
+  .home-l{flex-direction:column;align-items:flex-start;padding:84px 0 0 80px;gap:24px}
+  .s-wrap{flex-basis:auto;width:72%}
+  .ring{width:160px;height:160px;left:-74px;top:-74px}
+  .leather-b{margin-top:72px}
+  .lb-ghost{display:none}
+  .lb-img{width:100%}
+  .leather-b .lead{margin-top:32px}
+}
+
+.tl-img img{opacity:0}
+.tl-img img.on{opacity:1;z-index:1;animation:wipeN 1s cubic-bezier(.7,0,.2,1) both}
+.tl-img img.was{opacity:1;z-index:0}
+.tl-img.prev img.on{animation-name:wipeP}
+@keyframes wipeN{from{clip-path:inset(0 0 0 100%);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+@keyframes wipeP{from{clip-path:inset(0 100% 0 0);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+.tl-txt.ta > :not(.tl-nav){animation:txA .7s cubic-bezier(.2,.7,.2,1) both}
+.tl-txt.tb > :not(.tl-nav){animation:txB .7s cubic-bezier(.2,.7,.2,1) both}
+.tl-txt > h3{animation-delay:.08s !important}.tl-txt > .lead{animation-delay:.16s !important}
+@keyframes txA{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes txB{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.team-img img{transition:filter .6s ease,transform .8s ease;filter:grayscale(1)}
+.team-img:hover img{filter:none;transform:scale(1.03)}
+@media (max-width:720px){
+  .ceo .pt{width:160px;height:190px}
+  .tl-years{min-width:560px}
+}
+
+/* safety: images always fill their frame */
+.ph > img{inset:0 !important;width:100% !important;height:100% !important;max-width:none !important}
+@keyframes rvIn{from{opacity:0;transform:translateY(56px)}to{opacity:1;transform:none}}
+@keyframes zoomOut{from{transform:scale(1.14)}to{transform:scale(1)}}
+.sub h1{animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  .rv-on .rvl{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .rvl.rv-in{opacity:1;transform:none}
+  .rv-on .two > :nth-child(2),.rv-on .cols > div:nth-child(2),.rv-on .ceo > :nth-child(2),.rv-on .team > :nth-child(2),.rv-on .home-g > :nth-child(2),.rv-on .leather > :nth-child(2){transition-delay:.12s}
+  .rv-on .wide.rvl{opacity:1;transform:none}
+  .rv-on .wide > img{transform:scale(1.08);transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .wide.rv-in > img{transform:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div class="page" ref="{{pageRef}}">
+  <dc-import name="Header" color="#FFFFFF" current="about" hint-size="100%,80px"></dc-import>
+
+  <section class="sub">
+    <div class="ph dk"><img src="/_blob/0a4435e60dadd553b6c70555f158594f.webp" alt="눈 덮인 알프스를 달리는 스위스 붉은 열차"><img src="/_blob/cc8baccbd02cabfe33c9156d03215f80.webp" alt="image" width="1810" height="869" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1810px; aspect-ratio: 1810 / 869"></div>
+    <h1 class="serif">History &amp; Sustainable</h1>
+  </section>
+
+  <section class="sec s1" ref="{{s1Ref}}">
+    <div class="ghost serif" aria-hidden="true" style="{{ghostStyle}}">History</div>
+    <div class="in">
+      <div class="two">
+        <div><span class="num">01</span><span class="tag">DE SEDE</span><h2 class="serif">Living<br>sustainability</h2></div>
+        <p class="lead">지속 가능성을 통해 우리는 조국, 환경 및 전통 공예의 보존을 이해하고 장기적으로 자연을 존중하고 보호합니다. <br>천연 재료를 가공하여 우리의 제품이 내구성 있는 가구로 남도록 하는 것이 바로 우리가 추구하는 것입니다.</p>
+      </div>
+      <div class="live">
+        <div class="live-img">
+          <div class="ph dk a"><img src="/_blob/63b3a489d00d312ec5336e0e0d91762f.webp" alt="콘크리트와 목재로 지은 공간에 놓인 블랙 가죽 테라스형 소파"></div>
+          <div class="ph dk b"><img src="/_blob/d8739020ba8812838d03b5a9b58ae38c.webp" alt="가죽 소파에 기대어 잡지를 읽는 여성의 흑백 사진"><img src="/_blob/e09e8509f37e8afc0aef3a1422c45ec2.webp" alt="image" width="400" height="485" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 400px; aspect-ratio: 400 / 485"><img src="/_blob/d3faf044ecfa6ac3f96295ec041e4947.webp" alt="image" width="400" height="485" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 400px; aspect-ratio: 400 / 485"></div>
+        </div>
+        <div class="cols">
+          <div><h3>WE ARE</h3><p class="lead">de Sede는 스위스 클링나우에 있는 작지만 숙련된 안장 작업장에서 시작되었습니다. 장인들은 최고의 가죽을 좌석 가구로 만들기 위해 최선을 다했고, 다년간의 경험과 근면을 바탕으로 뛰어난 품질의 수제 가죽 가구를 만들 수 있었습니다.</p></div>
+          <div><h3>SHAPING FUTURE</h3><p class="lead">단기적인 트렌드를 피하고, 디자인 감각과 품질을 잃지 않는 제품을 생산한다는 브랜드 가치를 지켜가고 있습니다. de Sede 제품이 과거와 현재에도 지속 가능할 수 있도록 최선을 다하겠습니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec iv">
+    <div class="in">
+      <div class="ceo">
+        <div class="ph dk big"><img src="/_blob/1afa1d068137b15478c443c4c2f64a4c.webp" alt="블랙 가죽 암체어와 꽃다발"><img src="/_blob/69d91e185b12435b00fd6e1e1f3a3c67.webp" alt="image" width="1215" height="1022" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1215px; aspect-ratio: 1215 / 1022"></div>
+        <div>
+          <span class="num">02</span><span class="tag">DE SEDE</span>
+          <h2 class="serif h2x">Our Ceo:<br>Monika Walser</h2>
+          <div class="ph pt"><img src="/_blob/5b305a95a9b60099036841f34b4aa81a.webp" alt="image" width="1089" height="1091" style="max-width: 100%; height: 262px; display: block; object-fit: cover; width: 1089px; aspect-ratio: 1089 / 1091"></div>
+          <p class="lead">스위스 대표 하이엔드 가구 브랜드 de Sede를 이끌고 있는 Monika Walser는 디자인과 경영 분야에서 다양한 디플로마 및 석사 학위를 취득했습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec iv">
+    <div class="in">
+      <div class="team">
+        <div>
+          <span class="num">03</span><span class="tag">DE SEDE</span>
+          <h2 class="serif h2x">With heart and soul<br>behind it: Our employees</h2>
+          <p class="lead">우리 직원들은 스위스의 대표적인 하이엔드 브랜드의 위상에 맞게 높은 품질 기준을 보장하기 위해 매일 최선을 다하고 있습니다.</p>
+          <p class="lead">디자인, 솜씨, 장인 정신과 고품질 재료 외에도 de Sede의 성공 비결은 자격과 헌신, 열정으로 함께 목표를 향해 일하는 직원들입니다.</p>
+        </div>
+        <div class="ph dk team-img"><img src="/_blob/c29e0f233774b27052b041b7094e8b26.webp" alt="가죽 소파에 앉은 de Sede 직원 6명의 흑백 인물 사진"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="in">
+      <div class="hist-head">
+        <div>
+          <span class="num">04</span><span class="tag">DE SEDE</span>
+          <h2 class="serif h2x">Quality as a guarantee<br>for success: Our History</h2>
+        </div>
+        <p class="lead">1965년 작은 안장 공방에서 시작해 오늘에 이르기까지, de Sede가 걸어온 주요 순간들을 소개합니다.</p>
+      </div>
+      <div class="tl-scroll">
+        <ul class="tl-years" aria-label="연도 선택">
+          <sc-for list="{{years}}" as="y" hint-placeholder-count="6">
+            <li><button type="button" class="{{y.cls}}" onClick="{{y.pick}}"><span class="dot" aria-hidden="true"></span><span class="yr" style="font-size: 22px">{{y.year}}</span></button></li>
+          </sc-for>
+        </ul>
+      </div>
+      <div class="tl-card">
+        <div class="{{tlFrame}}"><sc-for list="{{tlImgs}}" as="m" hint-placeholder-count="6"><img class="{{m.cls}}" src="{{m.src}}" alt="{{m.alt}}"></sc-for></div>
+        <div class="{{tlTxtCls}}">
+          <span class="big" aria-hidden="true">{{ev.year}}</span>
+          <h3>{{ev.title}}</h3>
+          <p class="lead">{{ev.p1}}</p>
+          <p class="lead">{{ev.p2}}</p>
+          <div class="tl-nav">
+            <button type="button" aria-label="이전 연도" onClick="{{prev}}"><svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M27 7H1M7 1L1 7l6 6"></path></svg></button>
+            <span>{{pageNo}}/{{total}}</span>
+            <button type="button" aria-label="다음 연도" onClick="{{next}}"><svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 7h26M21 1l6 6-6 6"></path></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ph dk wide"><img src="/_blob/647b2ea10d7ff11d6678b62fc522d2f6.webp" alt="장인이 가죽 의자를 손바느질하는 모습" style="object-position:50% 40%"><img src="/_blob/d54665ab449bc484b4f2d9b9a7f870e9.webp" alt="image" width="2559" height="888" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 2559px; aspect-ratio: 2559 / 888"></section>
+
+  <section class="sec">
+    <div class="in">
+      <div class="home-t">
+        <span class="num">05</span><span class="tag">DE SEDE</span>
+        <h2 class="serif h2x" style="margin-bottom:24px">Loving homeland</h2>
+        <p class="lead">자연과 가정은 우리에게 중요하기에 de Sede의 가구는 오직 "Made in Switzerland"로 제조됩니다. <br>생태학적 책임을 인식하고 짧은 운송 경로와 지속 가능한 개발, 오래 쓰는 제품을 위해 노력합니다.</p>
+      </div>
+      <div class="home-g">
+        <div class="home-l">
+          <div class="s-wrap">
+          <svg class="ring" viewBox="0 0 240 240" aria-hidden="true"><defs><path id="hring" d="M120,120 m-96,0 a96,96 0 1,1 192,0 a96,96 0 1,1 -192,0"></path></defs><text font-size="15" letter-spacing="5" fill="#d9c9b6" font-family="Pretendard, Noto Sans KR, sans-serif"><textPath href="#hring">SUSTAINABILITY · ECO-FRIENDLY · SUSTAINABILITY · ECO-FRIENDLY ·</textPath></text></svg>
+          <div class="ph s-img"><img src="/_blob/b7e6dae939cce78ba4c26cdb1facc66e.webp" alt="호숫가 초원 위의 오두막과 알프스 숲"></div>
+          </div>
+          <p class="lead">미래 세대를 생각하며 가구를 만드는 모든 과정을 끊임없이 검토하는 것이 우리의 약속입니다. 시대를 초월한 디자인은 자원을 아껴 쓰는 데서 시작됩니다.</p>
+        </div>
+        <div class="ph home-b"><img src="/_blob/c9c61244746c292d14374629068ba054.webp" alt="팜파스 그라스 옆 초원에 놓인 레드 가죽 암체어"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec iv">
+    <div class="in">
+      <div class="leather">
+        <div class="ph l-img"><img src="/_blob/615027cdec36e93c50a38a1a84a8149a.webp" alt="창가 거실의 다크 브라운 가죽 소파와 플로어 램프"></div>
+        <div>
+          <span class="num">06</span><span class="tag">DE SEDE</span>
+          <h2 class="serif h2x">Feeling leather</h2>
+          <p class="lead">가죽은 가장 감각적으로 표현할 수 있는 소재입니다. 부드러운 표면과 섬세한 질감에서 집과 같은 편안함을 느끼실 수 있습니다.</p>
+          <p class="lead">de Sede는 동물의 피부가 가죽으로 정제되는 과정에 책임감을 가지고 가구를 만듭니다. 친환경 소재를 사용하고 환경에 미치는 영향을 끊임없이 고민합니다.</p>
+        </div>
+      </div>
+      <div class="leather-b" ref="{{lbRef}}">
+        <div class="lb-stage">
+        <div class="lb-ghost serif" aria-hidden="true"><div style="{{lb1}}"><span>Experience</span><span>Leather</span></div><div style="{{lb2}}"><span>Support</span><span>— Employee</span></div></div>
+        <div class="ph dk lb-img"><img src="/_blob/b8325a341d69a904288437b558efc7b3.webp" alt="장인이 가죽 의자를 십자 스티치로 꿰매는 모습"></div>
+        </div>
+        <p class="lead">직원이 회사를 만든다는 원칙에 따라 우리는 높은 안전 표준과 산업 보건에 주의를 기울입니다. 환경과 건강에 해롭지 않은 재료를 사용하고, 직원들이 장기적인 안정 속에서 매일 더 나아질 수 있도록 격려합니다.</p>
+        <a class="btn" href="Products.dc.html">More INFO</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" bg="/_blob/da1ce035f73d172769ba64318b11be22.webp" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1920,"height":6400}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { yi: 0, was: -1, dir: 'next', gen: 0, gp: 0.5, lp: 0.5 }; }
+  onScroll() {
+    if (this.raf) return;
+    this.raf = requestAnimationFrame(() => {
+      this.raf = null;
+      const vh = window.innerHeight || 800;
+      const prog = (el) => { const r = el.getBoundingClientRect(); return Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height))); };
+      const next = {};
+      if (this.s1El) { const v = prog(this.s1El); if (Math.abs(v - this.state.gp) > 0.002) next.gp = v; }
+      if (this.lbEl) { const v = prog(this.lbEl); if (Math.abs(v - this.state.lp) > 0.002) next.lp = v; }
+      if (Object.keys(next).length) this.setState(next);
+    });
+  }
+  componentDidMount() {
+    this.scrollFn = () => this.onScroll();
+    window.addEventListener('scroll', this.scrollFn, { passive: true });
+    window.addEventListener('resize', this.scrollFn);
+    document.addEventListener('scroll', this.scrollFn, { passive: true, capture: true });
+    this.onScroll();
+    const root = this.pageEl;
+    if (!root || typeof IntersectionObserver === 'undefined') return;
+    const els = root.querySelectorAll('.two > *, .live-img, .cols > div, .ceo > *, .team > *, .hist-head, .tl-scroll, .tl-card, .wide, .home-t, .home-g > *, .leather > *, .lb-stage, .leather-b .lead, .leather-b .btn');
+    els.forEach((el) => el.classList.add('rvl'));
+    root.classList.add('rv-on');
+    this.io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting || en.boundingClientRect.top < 0) { en.target.classList.add('rv-in'); this.io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => this.io.observe(el));
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    window.removeEventListener('scroll', this.scrollFn); window.removeEventListener('resize', this.scrollFn); document.removeEventListener('scroll', this.scrollFn, true);
+  }
+  renderVals() {
+    const data = [
+      { year: '1989', title: '장인 아카데미 설립', p1: '수작업 기술을 다음 세대에 전하기 위해 사내 장인 교육 프로그램을 시작했습니다.', p2: '숙련된 안장 장인들이 직접 후배를 가르치며 de Sede만의 바느질 기술을 이어오고 있습니다.', img: '/_blob/7bd564fcf84df75b550152eb3fb67f64.webp' },
+      { year: '2002', title: '글로벌 쇼룸 확장', p1: '유럽 주요 도시에 쇼룸을 열며 de Sede의 디자인을 더 많은 고객에게 선보였습니다.', p2: '각 쇼룸은 제품을 직접 앉아보고 만져볼 수 있는 경험 공간으로 꾸며졌습니다.', img: '/_blob/615027cdec36e93c50a38a1a84a8149a.webp' },
+      { year: '2012', title: '지속 가능한 가죽 공정 도입', p1: '환경에 미치는 영향을 줄이기 위해 친환경 무두질 공정을 도입하고 가죽 원산지 관리를 강화했습니다.', p2: '오래 쓸수록 멋이 깊어지는 가구라는 브랜드 철학을 소재부터 실천하기 시작했습니다.', img: '/_blob/c9c61244746c292d14374629068ba054.webp' },
+      { year: '2014', title: '새로운 경영 체제의 시작', p1: '새로운 경영진과 함께 브랜드의 정체성을 다시 정립하고, 장인 정신을 중심으로 한 제품 라인을 정비했습니다.', p2: '클링나우 공방의 생산 공정을 개선해 품질은 높이고 낭비는 줄이는 방향으로 나아갔습니다.', img: '/_blob/63b3a489d00d312ec5336e0e0d91762f.webp' },
+      { year: '2016', title: 'DS-21 소파 출시', p1: '바우하우스 운동에서 영감을 받은 Stephan Hürlemann이 디자인한 DS-21은 좌석 공간의 편안함과 높은 등받이의 웅장함을 동시에 보여줍니다.', p2: '모듈 구성으로 공간에 맞게 배치할 수 있어, 주거 공간과 라운지 모두에서 사랑받는 모델이 되었습니다.', img: '/_blob/6aca6844636dd691ce1bf76190ccf9af.webp' },
+      { year: '2018', title: '세미 아웃도어 컬렉션과 Harrods 숍인숍', p1: '세세한 부분까지 디자인된 세미 아웃도어 컬렉션을 선보이며 실내와 실외의 경계를 넘는 가구를 제안했습니다.', p2: '같은 해 7월, 런던 백화점 Harrods에 자체 숍인숍을 열어 영국 고객과 직접 만나기 시작했습니다.', img: '/_blob/c9c61244746c292d14374629068ba054.webp' }
+    ];
+    const yi = this.state.yi;
+    const n = data.length;
+    const go = (i) => { if (i === yi) return; this.setState({ was: yi, yi: i, dir: i < yi ? 'prev' : 'next', gen: this.state.gen + 1 }); };
+    return {
+      pageRef: (el) => { this.pageEl = el; },
+      s1Ref: (el) => { this.s1El = el; },
+      lbRef: (el) => { this.lbEl = el; },
+      ghostStyle: 'transform: translateY(' + Math.round((this.state.gp - 0.5) * 320) + 'px) rotate(180deg)',
+      lb1: 'transform: translateX(' + Math.round((0.5 - this.state.lp) * 120) + 'px)',
+      lb2: 'transform: translateX(' + Math.round((this.state.lp - 0.5) * 120) + 'px)',
+      years: data.map((d, i) => ({ year: d.year, cls: (i === yi ? 'on' : '') + (i < yi ? ' past' : ''), pick: () => go(i) })),
+      tlFrame: 'ph tl-img' + (this.state.dir === 'prev' ? ' prev' : ''),
+      tlImgs: data.map((d, i) => ({ src: d.img, alt: d.year + '년 de Sede 제품이 놓인 공간', cls: i === yi ? 'on' : (i === this.state.was ? 'was' : '') })),
+      tlTxtCls: 'tl-txt ' + (this.state.gen % 2 ? 'tb' : 'ta'),
+      ev: data[yi],
+      pageNo: yi + 1,
+      total: n,
+      prev: () => go((yi + n - 1) % n),
+      next: () => go((yi + 1) % n)
+    };
+  }
+}
+</script>
+</body>
+</html>

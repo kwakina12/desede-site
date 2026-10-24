@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Unofficial de Sede website redesign concept — personal non-commercial portfolio project. Not affiliated with de Sede AG.">
+<title>de Sede Service</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&amp;family=Noto+Sans+KR:wght@300;400;500&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#111111;font-family:'Pretendard','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.serif{font-family:'Arsenica Trial','Bodoni Moda',serif;font-weight:400}
+.page{position:relative;width:100%;overflow:hidden}
+.in{max-width:1440px;margin:0 auto;padding:0 60px}
+.ph{position:relative;overflow:hidden;background:#e7e0d5}
+.ph.dk{background:#2b2a28}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 26px;background:#111111;color:#FBF8F3;font-size:12px;letter-spacing:.08em;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:#785741}
+.lead{font-size:15px;line-height:1.7;color:#3a3633;font-weight:300;word-break:keep-all}
+.lead + .lead{margin-top:12px}
+.no{font-family:'Arsenica Trial','Bodoni Moda',serif;font-style:italic;font-size:96px;line-height:.8;color:#d6cfc4;letter-spacing:-.04em}
+.eyebrow{display:block;font-size:13px;letter-spacing:.08em;color:#8a837c;margin-bottom:28px}
+.more{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:14px;color:#5a534d}
+.more i{position:relative;display:block;width:22px;height:1px;background:currentColor;transition:width .3s}
+.more i::after{content:"";position:absolute;right:0;top:0;width:6px;height:1px;background:currentColor;transform:rotate(30deg);transform-origin:right center}
+.more:hover{color:#111111}
+.more:hover i{width:34px}
+.h2x{font-size:48px;line-height:1.12;font-weight:500}
+
+.sub{position:relative;height:max(520px,41.667vw);color:#FBF8F3;display:flex;align-items:center;justify-content:center;text-align:center}
+.sub .ph{position:absolute;inset:0}
+.sub .ph::after{content:"";position:absolute;inset:0;background:rgba(17,17,17,.38)}
+.sub h1{position:relative;font-size:64px;line-height:1.1;padding:0 20px}
+
+/* menu */
+.menu{background:#F7F3EE;padding:160px 0}
+.menu-g{display:grid;grid-template-columns:minmax(0,56fr) minmax(0,44fr);gap:120px;align-items:center;max-width:1440px;margin:0 auto;padding:0 60px}
+.menu-l{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:72px 48px}
+.mi{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:6px;align-content:start}
+.mi .no{grid-row:1/3;align-self:start}
+.mi h3{grid-column:2;align-self:end;font-size:26px;font-weight:500;padding-top:44px}
+.mi .lead{grid-column:2;margin-top:24px;max-width:300px}
+.mi .more{grid-column:2;margin-top:18px}
+.menu-img{aspect-ratio:727/586}
+
+/* 01 care */
+.care{padding:180px 0 200px}
+.care-g{display:grid;grid-template-columns:minmax(0,58fr) minmax(0,42fr);gap:clamp(110px,8vw,150px);align-items:start}
+.care{overflow:hidden}
+.care-img{position:relative}
+.care-img .ph{aspect-ratio:905/582}
+.badge{position:absolute;right:0;bottom:0;transform:translate(50%,50%);width:clamp(150px,12vw,220px);height:auto;aspect-ratio:1;border-radius:50%;background:#785741;z-index:2}
+.badge svg{width:100%;height:100%;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.care-t{padding-top:20px}
+.care-t .h2x{margin:-6px 0 32px}
+.care-t .lead{max-width:520px}
+.care-t .more{margin-top:32px}
+
+/* 02 repair */
+.banner{position:relative;height:620px;display:flex;align-items:center;justify-content:flex-end;padding:0 max(60px,calc((100% - 1440px)/2 + 60px));color:#FBF8F3}
+.banner .ph{position:absolute;inset:0;background:#000}
+.banner .ph img{object-position:30% 50%}
+.banner .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.55))}
+.banner-t{position:relative;z-index:2;text-align:right}
+.banner-t .no{color:#bdb5ab;display:block;margin-bottom:-6px}
+.banner h2{font-size:64px;line-height:1.08;text-transform:uppercase}
+.repair{padding:96px 0 180px}
+.repair-g{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:80px}
+.repair .eyebrow{font-size:12px;margin-bottom:16px}
+.repair h3{font-size:38px;line-height:1.15;margin-bottom:12px}
+.repair small{font-size:15px;color:#6b625b}
+.repair .lead{max-width:720px}
+
+/* 03 contact */
+.contact{background:#F7F3EE;padding:180px 0}
+.contact-g{display:grid;grid-template-columns:minmax(0,55fr) minmax(0,45fr);gap:96px;align-items:center}
+.contact-img{aspect-ratio:1175/1124}
+.contact .h2x{margin:-6px 0 24px}
+.form{margin-top:48px;display:flex;flex-direction:column;gap:22px}
+.form h3{font-size:20px;margin-bottom:4px}
+.fld{display:block}
+.fld span{display:block;font-size:12px;color:#6b625b;margin-bottom:6px}
+.fld input,.fld textarea{width:100%;border:0;border-bottom:1px solid #b9ad9f;background:transparent;padding:10px 0;font-family:inherit;font-size:15px;color:#111;min-height:44px;outline:none}
+.fld textarea{border:1px solid #b9ad9f;height:140px;padding:12px;resize:vertical}
+.fld input:focus,.fld textarea:focus{border-color:#785741}
+.form .btn{align-self:flex-start;margin-top:8px}
+.ok{font-size:13px;color:#785741}
+
+/* 04 faq */
+.faq{padding:180px 0}
+.faq-g{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:96px;align-items:start}
+.faq-h .h2x{margin:-6px 0 24px}
+.faq-h .lead{max-width:340px}
+.faq-h .more{margin-top:24px}
+.cats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.cats button{min-height:40px;padding:0 20px;border:1px solid #d6cfc4;border-radius:999px;background:transparent;font-family:inherit;font-size:13px;color:#6b625b;cursor:pointer}
+.cats button.on{background:#111111;border-color:#111111;color:#FBF8F3}
+.faq-l{border-top:1px solid #111111}
+.q{border-bottom:1px solid #e3dcd2}
+.q button{width:100%;background:none;border:0;display:grid;grid-template-columns:48px minmax(0,1fr) 24px;align-items:center;padding:24px 4px;min-height:72px;cursor:pointer;font-family:inherit;font-size:16px;color:#111;text-align:left;gap:8px}
+.q .qn{font-family:'Arsenica Trial','Bodoni Moda',serif;font-style:italic;font-size:22px;color:#b9ad9f}
+.q .ic{font-size:22px;font-weight:300;color:#6b625b;text-align:center}
+.q .a{padding:0 32px 28px 60px}
+.q .a .lead{line-height:1.75}
+
+@media (max-width:1024px){
+  .in{padding:0 32px}
+  .sub{height:400px}
+  .sub h1{font-size:48px}
+  .no{font-size:76px}
+  .h2x{font-size:40px}
+  .menu{padding:110px 0}
+  .menu-g{grid-template-columns:1fr;gap:64px;padding:0 32px}
+  .care{padding:120px 0 140px}
+  .care-g{grid-template-columns:1fr;gap:110px}
+  .badge{right:56px;width:170px;transform:translateY(50%)}
+  .banner{height:460px;padding:0 32px}
+  .banner h2{font-size:48px}
+  .repair{padding:72px 0 120px}
+  .repair-g{grid-template-columns:1fr;gap:32px}
+  .contact{padding:120px 0}
+  .contact-g{grid-template-columns:1fr;gap:56px}
+  .contact-img{aspect-ratio:16/10}
+  .faq{padding:120px 0}
+  .faq-g{grid-template-columns:1fr;gap:48px}
+  .faq-h .lead{max-width:none}
+}
+@media (max-width:720px){
+  .in{padding:0 20px}
+  .sub{height:320px}
+  .sub h1{font-size:34px}
+  .no{font-size:60px}
+  .h2x{font-size:32px}
+  .lead{font-size:14px}
+  .menu{padding:72px 0}
+  .menu-g{padding:0 20px;gap:48px}
+  .menu-l{grid-template-columns:1fr;gap:44px}
+  .mi h3{font-size:22px;padding-top:28px}
+  .mi .lead{margin-top:14px}
+  .care{padding:72px 0 110px}
+  .care-g{gap:90px}
+  .badge{width:130px;right:24px}
+  .care-t .h2x{margin-bottom:24px}
+  .banner{height:340px;padding:0 20px}
+  .banner h2{font-size:30px}
+  .banner .ph img{object-position:35% 50%}
+  .repair{padding:56px 0 80px}
+  .repair h3{font-size:30px}
+  .contact{padding:72px 0}
+  .contact-img{aspect-ratio:4/3}
+  .faq{padding:72px 0}
+  .q button{grid-template-columns:36px minmax(0,1fr) 20px;font-size:15px;padding:20px 0}
+  .q .a{padding:0 4px 24px 44px}
+}
+
+.mi .no{transition:color .4s ease,transform .4s ease}
+.mi:hover .no{color:#BD9257;transform:translateY(-4px)}
+.mi:hover h3{color:#785741}
+.q button:hover{color:#785741}
+.q .a{animation:faqIn .35s ease both}
+@keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.cats button{transition:background .25s,color .25s,border-color .25s}
+.cats button:hover{border-color:#111111;color:#111111}
+.cats button.on:hover{color:#FBF8F3}
+
+/* safety: images always fill their frame */
+.ph > img{inset:0 !important;width:100% !important;height:100% !important;max-width:none !important}
+@keyframes rvIn{from{opacity:0;transform:translateY(56px)}to{opacity:1;transform:none}}
+@keyframes zoomOut{from{transform:scale(1.14)}to{transform:scale(1)}}
+.sub h1{animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  .rv-on .rvl{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .rvl.rv-in{opacity:1;transform:none}
+  .rv-on .mi:nth-child(2),.rv-on .care-g > :nth-child(2),.rv-on .repair-g > :nth-child(2),.rv-on .contact-g > :nth-child(2){transition-delay:.12s}
+  .rv-on .mi:nth-child(3){transition-delay:.24s}.rv-on .mi:nth-child(4){transition-delay:.36s}
+  .rv-on .banner.rvl{opacity:1;transform:none}
+  .rv-on .banner > .ph > img{transform:scale(1.08);transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+  .rv-on .banner.rv-in > .ph > img{transform:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+@media (max-width:1024px){.no{font-size:72px !important}}
+@media (max-width:720px){.no{font-size:56px !important}}
+</style>
+</helmet>
+<div class="page" ref="{{pageRef}}">
+  <dc-import name="Header" color="#FFFFFF" current="service" hint-size="100%,80px"></dc-import>
+
+  <section class="sub">
+    <div class="ph dk"><img src="/_blob/7307ea7a65e8bad413d6127dc4202030.webp" alt="de Sede 소파가 놓인 공간"></div>
+    <h1 class="serif">Customer Service</h1>
+  </section>
+
+  <section class="menu" aria-label="서비스 메뉴">
+    <div class="menu-g">
+      <div class="menu-l">
+        <a class="mi" href="#care"><span class="no" aria-hidden="true" style="font-size: 80px">01</span><h3 class="serif">Leather Care</h3><p class="lead">일반적인 가죽 관리부터 특수 가죽 관리, 액체를 쏟았을 때의 대처법까지 알려드립니다.</p><span class="more">More View <i aria-hidden="true"></i></span></a>
+        <a class="mi" href="#repair"><span class="no" aria-hidden="true" style="font-size: 80px">02</span><h3 class="serif">Repairs</h3><p class="lead">수리 또는 복원에 관한 견적을 받을 수 있는 다양한 방법을 설명합니다.</p><span class="more">More View <i aria-hidden="true"></i></span></a>
+        <a class="mi" href="#contact"><span class="no" aria-hidden="true" style="font-size: 80px">03</span><h3 class="serif">Contact</h3><p class="lead">이메일을 통해 언제든 편하게 문의해 주세요.</p><span class="more">More View <i aria-hidden="true"></i></span></a>
+        <a class="mi" href="#faq"><span class="no" aria-hidden="true" style="font-size: 80px">04</span><h3 class="serif">FAQ</h3><p class="lead">제품과 관련해 자주 묻는 질문들에 답해 드립니다.</p><span class="more">More View <i aria-hidden="true"></i></span></a>
+      </div>
+      <div class="ph menu-img"><img src="/_blob/04d298d5c6e546890a653675e673ffaf.webp" alt="회색 공간에 놓인 가죽 의자 두 개와 원형 테이블"></div>
+    </div>
+  </section>
+
+  <section class="care" id="care">
+    <div class="in">
+      <span class="eyebrow">LEATHER CARE</span>
+      <div class="care-g">
+        <div class="care-img">
+          <div class="ph"><img src="/_blob/ef7aa3c8d4544d84438818947418fa5b.webp" alt="작업장에서 가죽 표면을 살펴보는 장인"></div>
+          <div class="badge" aria-hidden="true"><svg viewBox="0 0 236 236"><defs><path id="bring" d="M118,118 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0"></path></defs><text font-size="15" letter-spacing="3.5" fill="#e7d9c4" font-family="Pretendard, Noto Sans KR, sans-serif"><textPath href="#bring">LEATHER CARE · HANDMADE IN SWITZERLAND · DE SEDE ·</textPath></text></svg></div>
+        </div>
+        <div class="care-t">
+          <span class="no" aria-hidden="true" style="font-size: 80px">01</span>
+          <h2 class="serif h2x">Our leather<br>care products</h2>
+          <p class="lead">de Sede의 가죽은 귀한 천연 지방과 흠과 물을 견디는 함침 물질을 머금고 있습니다. 하지만 천연 소재이기에 정기적이고 적절한 관리가 필요합니다.</p>
+          <p class="lead">안내된 관리 방법을 따라 나만의 가구를 오래도록 가꾸어 보세요.</p>
+          <a class="more" href="#faq">View information <i aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner" id="repair" aria-label="수리 서비스">
+    <div class="ph"><img src="/_blob/bd493df2deea1e2a1808d1aac9c0ae05.webp" alt="소파 아래에 누워 프레임을 점검하는 장인"></div>
+    <div class="banner-t">
+      <span class="no" aria-hidden="true" style="font-size: 80px">02</span>
+      <h2 class="serif" style="line-height: 1.25">Inspire deep<br>fondness</h2>
+    </div>
+  </section>
+
+  <section class="repair">
+    <div class="in">
+      <div class="repair-g">
+        <div><span class="eyebrow">REPAIR SERVICE</span><h3 class="serif">Our repair service</h3><small>Quality as appreciation</small></div>
+        <div>
+          <p class="lead">de Sede의 가구에는 이야기가 있습니다. 깊은 애정으로 만들어 일생 동안 여러분과 함께할 수 있도록 좋은 제품을 생산합니다. 그러나 아무리 신경 써서 사용해도 마모의 흔적이 나타나거나 손질이 필요한 순간이 생길 수 있습니다.</p>
+          <p class="lead">이 경우 가까운 매장에 문의하시면 수리와 복원에 관한 조언과 비용 견적을 받아보실 수 있습니다. 커버 교체, 가죽 관리, 보증에 대한 정보는 아래 FAQ에서도 확인할 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="in">
+      <div class="contact-g">
+        <div class="ph dk contact-img"><img src="/_blob/c9c416ec1d4e9e983f27f870f3a5839a.webp" alt="de Sede 가구가 놓인 공간"></div>
+        <div>
+          <span class="no" aria-hidden="true">03</span>
+          <h2 class="serif h2x">Contact Us</h2>
+          <p class="lead">전화 또는 이메일로 문의하시면 담당자가 영업일 기준 2일 이내에 답변드립니다.</p>
+          <form class="form" onSubmit="{{submit}}">
+            <h3 class="serif">Get a quote</h3>
+            <label class="fld"><span>이름</span><input type="text" placeholder="이름을 입력해 주세요"></label>
+            <label class="fld"><span>Email</span><input type="email" placeholder="이메일을 입력해 주세요"></label>
+            <label class="fld"><span>내용</span><textarea placeholder="문의 내용을 입력해 주세요"></textarea></label>
+            <button class="btn" type="submit">Send message</button>
+            <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}"><p class="ok" role="status">문의가 접수되었습니다.</p></sc-if>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="in">
+      <div class="faq-g">
+        <div class="faq-h">
+          <span class="no" aria-hidden="true" style="font-size: 80px">04</span>
+          <h2 class="serif h2x">FAQ</h2>
+          <p class="lead">가죽 관리, 수리, 배송과 구매에 관해 고객님들이 자주 묻는 질문을 모았습니다. 원하는 답을 찾지 못하셨다면 언제든 문의해 주세요.</p>
+          <a class="more" href="#contact">Contact Us <i aria-hidden="true"></i></a>
+        </div>
+        <div>
+          <div class="cats" role="group" aria-label="질문 분류">
+            <sc-for list="{{cats}}" as="c" hint-placeholder-count="4">
+              <button type="button" class="{{c.cls}}" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}">{{c.label}}</button>
+            </sc-for>
+          </div>
+          <div class="faq-l">
+            <sc-for list="{{faqs}}" as="f" hint-placeholder-count="6">
+              <div class="q">
+                <button type="button" aria-expanded="{{f.expanded}}" onClick="{{f.toggle}}"><span class="qn">{{f.no}}</span><span>{{f.q}}</span><span class="ic" aria-hidden="true">{{f.icon}}</span></button>
+                <sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}"><div class="a"><p class="lead">{{f.a}}</p></div></sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" bg="/_blob/f9b9fa1e5749876f6f7c4b6c7c2a4e71.webp" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1920,"height":5600}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { open: 0, sent: false, cat: 'all' }; }
+  componentDidMount() {
+    const root = this.pageEl;
+    if (!root || typeof IntersectionObserver === 'undefined') return;
+    const els = root.querySelectorAll('.mi, .menu-img, .care-g > *, .banner, .repair-g > div, .contact-g > *, .faq-h, .cats, .faq-l');
+    els.forEach((el) => el.classList.add('rvl'));
+    root.classList.add('rv-on');
+    this.io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting || en.boundingClientRect.top < 0) { en.target.classList.add('rv-in'); this.io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach((el) => this.io.observe(el));
+  }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+  renderVals() {
+    const all = [
+      { c: 'care', q: '가죽 제품은 얼마나 자주 관리해야 하나요?', a: '일상적인 먼지는 마른 부드러운 천으로 주 1회 닦아 주시고, 전용 클렌저와 보습제는 6개월에 한 번 사용하는 것을 권장합니다. 직사광선과 난방기 가까이는 피해 주세요.' },
+      { c: 'care', q: '가죽에 음료를 쏟았어요. 어떻게 해야 하나요?', a: '문지르지 말고 마른 천으로 가볍게 눌러 액체를 흡수시켜 주세요. 얼룩이 남으면 매장에 문의하시면 가죽 종류에 맞는 관리 방법을 안내해 드립니다.' },
+      { c: 'repair', q: '수리 접수는 어떻게 하나요?', a: '구매하신 매장이나 고객센터에 제품 사진과 모델명을 보내주시면 상태를 확인한 뒤 수리 가능 여부와 예상 비용, 소요 기간을 안내해 드립니다.' },
+      { c: 'repair', q: '보증 기간은 얼마나 되나요?', a: '프레임과 구조는 구매일로부터 5년, 가죽과 쿠션은 2년간 보증됩니다. 정상적인 사용 중 발생한 제조상 결함은 무상으로 수리해 드립니다.' },
+      { c: 'order', q: '제품 배송은 얼마나 걸리나요?', a: '모든 제품은 스위스 클링나우에서 주문 후 제작되어 평균 10~14주가 소요됩니다. 정확한 일정은 주문 확정 시 별도로 안내해 드립니다.' },
+      { c: 'showroom', q: '쇼룸 방문은 예약이 필요한가요?', a: '예약 없이도 방문 가능하지만, 상담을 원하시면 미리 예약해 주세요. 전담 상담사가 공간에 맞는 제품을 함께 찾아드립니다.' }
+    ];
+    const catDefs = [{ k: 'all', label: '전체' }, { k: 'care', label: '가죽 관리' }, { k: 'repair', label: '수리·보증' }, { k: 'order', label: '주문·배송' }, { k: 'showroom', label: '쇼룸' }];
+    const cat = this.state.cat;
+    const list = cat === 'all' ? all : all.filter((x) => x.c === cat);
+    const cur = this.state.open;
+    return {
+      pageRef: (el) => { this.pageEl = el; },
+      sent: this.state.sent,
+      submit: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ sent: true }); },
+      cats: catDefs.map((d) => ({ label: d.label, cls: d.k === cat ? 'on' : '', pressed: d.k === cat ? 'true' : 'false', pick: () => this.setState({ cat: d.k, open: 0 }) })),
+      faqs: list.map((x, i) => ({
+        no: (i < 9 ? '0' : '') + (i + 1),
+        q: x.q,
+        a: x.a,
+        open: cur === i,
+        expanded: cur === i ? 'true' : 'false',
+        icon: cur === i ? '−' : '+',
+        toggle: () => this.setState({ open: cur === i ? -1 : i })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
